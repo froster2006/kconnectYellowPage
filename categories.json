@@ -1,0 +1,64 @@
+[
+    {
+    "id": "realestate",
+    "name": "地产中介",
+    "icon": "🏠",
+    "sub": [
+      {"id":"re-agent","name":"房产经纪"}
+    ]
+  },
+  {
+    "id": "food",
+    "name": "餐馆美食",
+    "icon": "🍜",
+    "sub": [
+      {"id":"food-cn","name":"中餐餐馆"},
+      {"id":"food-home","name":"家庭厨房"}
+
+    ]
+  },
+  {
+    "id": "repair",
+    "name": "装修维修",
+    "icon": "🔧",
+    "sub": [
+      {"id":"repair-home","name":"家庭装修"},
+      {"id":"repair-water","name":"水电维修"}
+    ]
+  },
+  {
+    "id": "moving",
+    "name": "搬家物流",
+    "icon": "🚚",
+    "sub": [
+      {"id":"moving-local","name":"本地搬家"}
+    ]
+  },
+  {
+    "id": "medical",
+    "name": "医疗牙医",
+    "icon": "🩺",
+    "sub": [
+      {"id":"med-dental","name":"牙医诊所"},
+      {"id":"med-tcm","name":"中医理疗"}
+    ]
+  },
+  {
+    "id": "edu",
+    "name": "教育培训",
+    "icon": "📚",
+    "sub": [
+      {"id":"edu-tutor","name":"课外补习"},
+      {"id":"edu-art","name":"艺术兴趣"}
+    ]
+  },
+  {
+    "id": "auto",
+    "name": "汽车服务",
+    "icon": "🚗",
+    "sub": [
+      {"id":"auto-dealer","name":"汽车维修"}
+    ]
+  }
+
+]

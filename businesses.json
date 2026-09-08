@@ -1,0 +1,42 @@
+[
+  {
+    "id":1,
+    "name":"一哥装修",
+    "catName":"装修维修",
+    "subCatId":"repair-home",
+    "subCatName":"家庭装修",
+    "desc":"家庭装修、旧房翻新、水电维修、地板安装",
+    "phone":"+1 234‑567‑890",
+    "address":"Waterloo, ON"
+  },
+  {
+    "id":2,
+    "name":"品味居",
+    "catName":"餐馆美食",
+    "subCatId":"food-cn",
+    "subCatName":"中餐",
+    "desc":"川菜小炒、外卖、堂食，家庭聚餐",
+    "phone":"+1 234‑561‑111",
+    "address":"Kitchener, ON"
+  },
+  {
+    "id":3,
+    "name":"安心搬家公司",
+    "catName":"搬家物流",
+    "subCatId":"moving-local",
+    "subCatName":"本地搬家",
+    "desc":"本地搬家、长途搬运、家具拆装",
+    "phone":"+1 234‑562‑222",
+    "address":"Waterloo‑Cambridge"
+  },
+    {
+    "id":3,
+    "name":"冬哥地产经济",
+    "catName":"地产中介",
+    "subCatId":"re-agent",
+    "subCatName":"房产经纪",
+    "desc":"房产经纪、买卖租赁、房屋评估",
+    "phone":"+1 234‑562‑222",
+    "address":"Waterloo‑Cambridge"
+  }
+]

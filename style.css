@@ -1,0 +1,717 @@
+/* =========================================================
+   KWCG Connect - Modern Style
+   ========================================================= */
+
+:root {
+  --primary: #0f766e;
+  --primary-dark: #115e59;
+  --primary-light: #ccfbf1;
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --border-light: #f1f5f9;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  --shadow-sm: 0 1px 3px rgb(15 23 42 / 0.05);
+  --shadow-md: 0 6px 18px rgb(15 23 42 / 0.08);
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(
+    135deg,
+    #ccfbf1 0%,
+    #f8fafc 45%,
+    #dbeafe 100%
+  ) !important;
+
+  color: var(--text);
+  min-height: 100vh;
+  max-width: 640px !important;
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   VIEW SWITCHING
+   ========================================================= */
+
+#landingView.view-hidden,
+#listView.view-hidden {
+  display: none !important;
+}
+
+
+/* =========================================================
+   LANDING HEADER
+   ========================================================= */
+
+#landingView > header {
+  background: linear-gradient(
+    135deg,
+    #0f766e 0%,
+    #0d9488 100%
+  ) !important;
+
+  padding: 1.5rem 1rem !important;
+
+  border-radius: 0 0 20px 20px;
+
+  box-shadow:
+    0 4px 20px rgb(15 118 110 / 0.18) !important;
+}
+
+#landingView > header h1 {
+  font-size: 1.4rem !important;
+  letter-spacing: -0.02em;
+}
+
+#landingView > header p {
+  margin-top: 0.35rem !important;
+  opacity: 0.85;
+}
+
+
+/* =========================================================
+   LANDING CATEGORY CONTAINER
+   ========================================================= */
+
+#landingCatContainer {
+  margin-top: 0.75rem !important;
+  padding: 0 0.75rem 1rem;
+}
+
+
+/* =========================================================
+   CATEGORY GROUP
+   ========================================================= */
+
+.cat-group {
+  margin-bottom: 0.5rem;
+}
+
+
+/* =========================================================
+   MAIN CATEGORY
+   ========================================================= */
+
+.cat-parent {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-md);
+
+  margin-bottom: 0;
+  padding: 1rem 1.1rem !important;
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+
+.cat-parent:hover {
+  background: #ffffff !important;
+  border-color: #cbd5e1 !important;
+
+  transform: translateY(-1px);
+
+  box-shadow: var(--shadow-md);
+}
+
+.cat-parent:active {
+  transform: translateY(0);
+}
+
+
+/* Category arrow */
+
+.cat-arrow {
+  color: #94a3b8;
+  transition: transform 200ms ease;
+}
+
+.cat-parent:hover .cat-arrow {
+  color: var(--primary);
+}
+
+
+/* =========================================================
+   SUB CATEGORIES
+   ========================================================= */
+
+.cat-children {
+  overflow: hidden;
+
+  margin-top: 2px;
+
+  background: #f8fafc;
+
+  border-radius:
+    0 0 var(--radius-md) var(--radius-md);
+}
+
+.subcat-item {
+  padding: 0.8rem 1rem 0.8rem 2.5rem !important;
+
+  font-size: 0.875rem;
+
+  color: var(--text-secondary) !important;
+
+  border-bottom:
+    1px solid var(--border-light) !important;
+
+  cursor: pointer;
+
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    padding-left 160ms ease;
+}
+
+.subcat-item:last-child {
+  border-bottom: none !important;
+}
+
+.subcat-item:hover {
+  background: var(--primary-light) !important;
+
+  color: var(--primary-dark) !important;
+
+  padding-left: 2.75rem !important;
+}
+
+
+/* =========================================================
+   LIST HEADER
+   ========================================================= */
+
+#listView > header {
+  background: #ffffff !important;
+
+  color: var(--text) !important;
+
+  border-bottom:
+    1px solid var(--border-light);
+
+  box-shadow:
+    0 1px 8px rgb(15 23 42 / 0.05) !important;
+
+  /* NO BLUR */
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+
+/* Header buttons */
+
+#listView > header button {
+  color: var(--text-secondary) !important;
+
+  width: 36px;
+  height: 36px;
+
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    background-color 150ms ease,
+    color 150ms ease;
+}
+
+#listView > header button:hover {
+  background: #f1f5f9;
+  color: var(--primary) !important;
+}
+
+
+/* Header title */
+
+#listPageTitle {
+  color: var(--text) !important;
+
+  font-size: 1rem !important;
+
+  letter-spacing: -0.01em;
+}
+
+
+/* =========================================================
+   DRAWER OVERLAY
+   ========================================================= */
+
+.drawer-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgb(15 23 42 / 0.45);
+
+  z-index: 20;
+
+  display: none;
+
+  /* NO BLUR */
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.drawer-overlay:not(.hidden) {
+  display: block;
+}
+
+
+/* =========================================================
+   DRAWER PANEL
+   ========================================================= */
+
+.drawer-panel {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  bottom: 0;
+
+  width: 300px !important;
+  max-width: 85vw;
+
+  background: #ffffff !important;
+
+  z-index: 30;
+
+  transform: translateX(-100%);
+
+  transition:
+    transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  overflow-y: auto;
+
+  border-right:
+    1px solid var(--border);
+
+  border-radius:
+    0 18px 18px 0;
+
+  box-shadow:
+    10px 0 40px rgb(15 23 42 / 0.12);
+}
+
+.drawer-panel.open {
+  transform: translateX(0);
+}
+
+
+/* Drawer header */
+
+#drawerPanel > div:first-child {
+  background: linear-gradient(
+    135deg,
+    #0f766e,
+    #0d9488
+  ) !important;
+
+  padding: 1.1rem 1rem !important;
+}
+
+
+/* Drawer categories */
+
+.drawer-category {
+  background: #ffffff;
+
+  color: var(--text-secondary);
+
+  border-color:
+    var(--border-light) !important;
+
+  transition:
+    background-color 150ms ease,
+    color 150ms ease;
+}
+
+.drawer-category:hover {
+  background: #f0fdfa !important;
+  color: var(--primary-dark);
+}
+
+
+/* Drawer close */
+
+#closeDrawer {
+  width: 34px;
+  height: 34px;
+
+  border-radius: 9px;
+
+  transition:
+    background-color 150ms ease;
+}
+
+#closeDrawer:hover {
+  background:
+    rgb(255 255 255 / 0.15);
+}
+
+
+/* =========================================================
+   SEARCH AREA
+   ========================================================= */
+
+#listView > .p-4.bg-white {
+  background: var(--background) !important;
+
+  padding: 1rem !important;
+}
+
+
+/* Search input */
+
+#searchInput {
+  width: 100%;
+  height: 46px;
+
+  background: #ffffff !important;
+
+  border:
+    1px solid var(--border) !important;
+
+  border-radius: 12px !important;
+
+  color: var(--text);
+
+  box-shadow:
+    var(--shadow-sm);
+
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+#searchInput::placeholder {
+  color: #94a3b8;
+}
+
+#searchInput:focus {
+  outline: none !important;
+
+  border-color:
+    var(--primary) !important;
+
+  box-shadow:
+    0 0 0 3px
+    rgb(15 118 110 / 0.10) !important;
+}
+
+
+/* Search icon */
+
+#listView > .p-4.bg-white .fa-search {
+  color: #94a3b8 !important;
+
+  top: 15px !important;
+}
+
+
+/* =========================================================
+   BUSINESS LIST
+   ========================================================= */
+
+#businessListWrap {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+
+  margin-top: 0.25rem !important;
+}
+
+
+/* =========================================================
+   BUSINESS CARD
+   ========================================================= */
+
+.business-card {
+  background: linear-gradient(
+    135deg,
+    #faf5ff 0%,
+    #ffffff 50%,
+    #f5f3ff 100%
+  );
+
+  border: 1px solid #e9d5ff;
+
+  border-radius: var(--radius-lg);
+
+  padding: 1rem;
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.business-card:hover {
+  transform: translateY(-2px);
+
+  border-color: #d8b4fe;
+
+  box-shadow: var(--shadow-md);
+}
+
+
+/* Business name */
+
+.business-card .business-name {
+  color:
+    var(--primary-dark);
+
+  font-size: 1rem;
+
+  font-weight: 700;
+
+  line-height: 1.4;
+}
+
+
+/* Business category */
+
+.business-card .business-category {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding:
+    0.25rem 0.6rem;
+
+  border-radius: 999px;
+
+  background:
+    var(--primary-light);
+
+  color:
+    var(--primary-dark);
+
+  font-size: 0.7rem;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+
+/* Description */
+
+.business-card .business-desc {
+  margin-top: 0.4rem;
+
+  color:
+    var(--text-secondary);
+
+  font-size: 0.875rem;
+
+  line-height: 1.5;
+}
+
+
+/* Business information */
+
+.business-card .business-info {
+  margin-top: 0.75rem;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.4rem;
+
+  color:
+    var(--text-secondary);
+
+  font-size: 0.875rem;
+}
+
+
+/* Icons */
+
+.business-card .business-info i {
+  width: 20px;
+
+  color:
+    #94a3b8;
+
+  text-align: center;
+
+  margin-right: 0.2rem;
+}
+
+
+/* Phone */
+
+.business-card .business-phone {
+  color:
+    var(--primary);
+
+  font-weight: 500;
+
+  text-decoration: none;
+}
+
+.business-card .business-phone:hover {
+  color:
+    var(--primary-dark);
+
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   EMPTY RESULT
+   ========================================================= */
+
+.empty-result {
+  background: #ffffff;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:
+    var(--radius-lg);
+
+  padding:
+    2rem 1rem;
+
+  text-align: center;
+
+  color:
+    var(--text-muted);
+
+  box-shadow:
+    var(--shadow-sm);
+}
+
+
+/* =========================================================
+   LOAD MORE
+   ========================================================= */
+
+#listView > .text-center {
+  color:
+    var(--text-muted) !important;
+
+  padding:
+    1.5rem 1rem !important;
+}
+
+#listView > .text-center button {
+  background: #ffffff;
+
+  color:
+    var(--text-secondary);
+
+  border:
+    1px solid var(--border) !important;
+
+  border-radius:
+    10px !important;
+
+  padding:
+    0.65rem 1rem !important;
+
+  font-weight: 500;
+
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+
+#listView > .text-center button:hover {
+  background: #f8fafc;
+
+  border-color:
+    #cbd5e1 !important;
+
+  transform:
+    translateY(-1px);
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background:
+    #cbd5e1;
+
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:
+    #94a3b8;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+  body {
+    max-width: 100% !important;
+  }
+
+  #landingView > header {
+    border-radius:
+      0 0 18px 18px;
+  }
+
+  .drawer-panel {
+    width: 290px !important;
+  }
+
+  .business-card {
+    border-radius: 14px;
+  }
+}
+
+
+/* =========================================================
+   TAILWIND HIDDEN OVERRIDE
+   ========================================================= */
+
+.hidden {
+  display: none !important;
+}

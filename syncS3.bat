@@ -1,0 +1,1 @@
+aws s3 sync .\ s3://kwcg-connect-yellowpage --exclude ".git/*" --profile sls
