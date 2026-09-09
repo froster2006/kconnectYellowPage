@@ -174,16 +174,6 @@ function renderDrawerCategories() {
   }
 
 
-  wrap.innerHTML = `
-    <div
-      class="px-4 py-3 border-b text-sm cursor-pointer hover:bg-gray-100 drawer-category"
-      data-cat="全部"
-    >
-      全部商家
-    </div>
-  `;
-
-
   categories.forEach(cat => {
 
     const div =
@@ -249,21 +239,13 @@ function renderBusinessList(categoryName) {
   let list;
 
 
-  if (
-    !categoryName ||
-    categoryName === '全部'
-  ) {
 
-    list = businesses;
+  list =
+    businesses.filter(
+      b => b.catName === categoryName
+    );
 
-  } else {
 
-    list =
-      businesses.filter(
-        b => b.catName === categoryName
-      );
-
-  }
 
 
   /* No results */
@@ -310,22 +292,20 @@ function renderBusinessList(categoryName) {
         </div>
 
 
-        ${
-          b.desc
-            ? `
+        ${b.desc
+        ? `
               <p class="business-desc">
                 ${b.desc}
               </p>
             `
-            : ''
-        }
+        : ''
+      }
 
 
         <div class="business-info">
 
-          ${
-            b.phone
-              ? `
+          ${b.phone
+        ? `
                 <div>
 
                   <i class="fa fa-phone"></i>
@@ -339,13 +319,12 @@ function renderBusinessList(categoryName) {
 
                 </div>
               `
-              : ''
-          }
+        : ''
+      }
 
 
-          ${
-            b.address
-              ? `
+          ${b.address
+        ? `
                 <div>
 
                   <i class="fa fa-map-marker"></i>
@@ -356,8 +335,8 @@ function renderBusinessList(categoryName) {
 
                 </div>
               `
-              : ''
-          }
+        : ''
+      }
 
         </div>
 
@@ -550,36 +529,8 @@ if (drawerOverlay) {
 }
 
 
-/* =========================================================
-   SEARCH
-   ========================================================= */
-
-const searchInput =
-  document.getElementById(
-    'searchInput'
-  );
 
 
-if (searchInput) {
-
-  searchInput.addEventListener(
-    'input',
-    event => {
-
-      const kw =
-        event.target.value
-          .trim()
-          .toLowerCase();
-
-      console.log(
-        '搜索关键词:',
-        kw
-      );
-
-    }
-  );
-
-}
 
 
 /* =========================================================

@@ -1,6 +1,6 @@
 [
   {
-    "id":1,
+
     "name":"一哥装修",
     "catName":"装修维修",
     "subCatId":"repair-home",
@@ -10,7 +10,7 @@
     "address":"Waterloo, ON"
   },
   {
-    "id":2,
+  
     "name":"品味居",
     "catName":"餐馆美食",
     "subCatId":"food-cn",
@@ -20,7 +20,7 @@
     "address":"Kitchener, ON"
   },
   {
-    "id":3,
+
     "name":"安心搬家公司",
     "catName":"搬家物流",
     "subCatId":"moving-local",
@@ -30,7 +30,7 @@
     "address":"Waterloo‑Cambridge"
   },
     {
-    "id":3,
+   
     "name":"冬哥地产经济",
     "catName":"地产中介",
     "subCatId":"re-agent",
