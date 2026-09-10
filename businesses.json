@@ -1,42 +1,184 @@
 [
   {
-
-    "name":"一哥装修",
-    "catName":"装修维修",
-    "subCatId":"repair-home",
-    "subCatName":"家庭装修",
-    "desc":"家庭装修、旧房翻新、水电维修、地板安装",
-    "phone":"+1 234‑567‑890",
-    "address":"Waterloo, ON"
+    "business_name": "测试房产公司",
+    "wechat": "test_realestate",
+    "catName": "地产中介",
+    "subCatName": "房产经纪",
+    "phone": "519-555-1001",
+    "Email": "realestate@example.com",
+    "address": "100 King Street, Waterloo, ON",
+    "url": "www.example.com",
+    "desc": "提供滑铁卢地区房屋买卖、租赁及房产咨询服务。"
   },
   {
-  
-    "name":"品味居",
-    "catName":"餐馆美食",
-    "subCatId":"food-cn",
-    "subCatName":"中餐",
-    "desc":"川菜小炒、外卖、堂食，家庭聚餐",
-    "phone":"+1 234‑561‑111",
-    "address":"Kitchener, ON"
+    "business_name": "Waterloo Homes 房产经纪",
+    "wechat": "waterloo_homes",
+    "catName": "地产中介",
+    "subCatName": "房产经纪",
+    "phone": "519-555-1002",
+    "Email": "homes@example.com",
+    "address": "200 Weber Street, Kitchener, ON",
+    "url": "https://www.example.com",
+    "desc": "专注 Waterloo、Kitchener 和 Cambridge 地区住宅买卖。"
+  },
+
+  {
+    "business_name": "老北京面馆",
+    "wechat": "beijing_noodles",
+    "catName": "餐馆美食",
+    "subCatName": "中餐餐馆",
+    "phone": "519-555-2001",
+    "Email": "noodles@example.com",
+    "address": "123 King Street N, Waterloo, ON",
+    "url": "www.example.com",
+    "desc": "手工面条、北京炸酱面、牛肉面等传统中式美食。"
   },
   {
-
-    "name":"安心搬家公司",
-    "catName":"搬家物流",
-    "subCatId":"moving-local",
-    "subCatName":"本地搬家",
-    "desc":"本地搬家、长途搬运、家具拆装",
-    "phone":"+1 234‑562‑222",
-    "address":"Waterloo‑Cambridge"
+    "business_name": "江南小厨",
+    "wechat": "jiangnan_kitchen",
+    "catName": "餐馆美食",
+    "subCatName": "中餐餐馆",
+    "phone": "519-555-2002",
+    "Email": "",
+    "address": "456 University Avenue, Waterloo, ON",
+    "url": "",
+    "desc": "家常江浙菜，提供堂食和外卖服务。"
   },
-    {
-   
-    "name":"冬哥地产经济",
-    "catName":"地产中介",
-    "subCatId":"re-agent",
-    "subCatName":"房产经纪",
-    "desc":"房产经纪、买卖租赁、房屋评估",
-    "phone":"+1 234‑562‑222",
-    "address":"Waterloo‑Cambridge"
+  {
+    "business_name": "妈妈私房菜",
+    "wechat": "mama_kitchen",
+    "catName": "餐馆美食",
+    "subCatName": "家庭厨房",
+    "phone": "519-555-2003",
+    "Email": "mama@example.com",
+    "address": "Waterloo, ON",
+    "url": "",
+    "desc": "家庭式中餐，提前预订，每周提供不同特色菜。"
+  },
+
+  {
+    "business_name": "安心装修",
+    "wechat": "safe_renovation",
+    "catName": "装修维修",
+    "subCatName": "家庭装修",
+    "phone": "519-555-3001",
+    "Email": "renovation@example.com",
+    "address": "50 Bridgeport Road, Waterloo, ON",
+    "url": "www.example.com",
+    "desc": "厨房、卫生间、地下室及全屋装修服务。"
+  },
+  {
+    "business_name": "水电专家",
+    "wechat": "plumbing_electric",
+    "catName": "装修维修",
+    "subCatName": "水电维修",
+    "phone": "519-555-3002",
+    "Email": "service@example.com",
+    "address": "Kitchener, ON",
+    "url": "www.example.com",
+    "desc": "提供家庭水管、电路、灯具及常见电气问题维修。"
+  },
+
+  {
+    "business_name": "快捷搬家",
+    "wechat": "quick_move",
+    "catName": "搬家物流",
+    "subCatName": "本地搬家",
+    "phone": "519-555-4001",
+    "Email": "move@example.com",
+    "address": "Kitchener, ON",
+    "url": "www.example.com",
+    "desc": "提供 Kitchener、Waterloo、Cambridge 本地搬家服务。"
+  },
+  {
+    "business_name": "安心搬家物流",
+    "wechat": "easy_move",
+    "catName": "搬家物流",
+    "subCatName": "本地搬家",
+    "phone": "519-555-4002",
+    "Email": "",
+    "address": "Cambridge, ON",
+    "url": "",
+    "desc": "家庭搬家、公寓搬家及小型物品运输。"
+  },
+
+  {
+    "business_name": "和康针灸",
+    "wechat": "healing_acu",
+    "catName": "医疗保健",
+    "subCatName": "针灸推拿",
+    "phone": "519-555-5001",
+    "Email": "acu@example.com",
+    "address": "88 King Street, Waterloo, ON",
+    "url": "www.example.com",
+    "desc": "提供针灸、推拿及相关传统理疗服务。"
+  },
+  {
+    "business_name": "中医健康馆",
+    "wechat": "tcm_health",
+    "catName": "医疗保健",
+    "subCatName": "中医理疗",
+    "phone": "519-555-5002",
+    "Email": "tcm@example.com",
+    "address": "99 Erb Street, Waterloo, ON",
+    "url": "www.example.com",
+    "desc": "提供中医咨询及传统理疗服务。"
+  },
+
+  {
+    "business_name": "ABC课外辅导",
+    "wechat": "abc_tutor",
+    "catName": "教育培训",
+    "subCatName": "课外补习",
+    "phone": "519-555-6001",
+    "Email": "tutor@example.com",
+    "address": "Waterloo, ON",
+    "url": "www.example.com",
+    "desc": "提供数学、英语、科学等课程的课外辅导。"
+  },
+  {
+    "business_name": "未来教育中心",
+    "wechat": "future_edu",
+    "catName": "教育培训",
+    "subCatName": "课外补习",
+    "phone": "519-555-6002",
+    "Email": "",
+    "address": "Kitchener, ON",
+    "url": "",
+    "desc": "中小学生课外辅导及学习规划。"
+  },
+  {
+    "business_name": "小艺术家工作室",
+    "wechat": "little_artist",
+    "catName": "教育培训",
+    "subCatName": "艺术兴趣",
+    "phone": "519-555-6003",
+    "Email": "art@example.com",
+    "address": "120 King Street N, Waterloo, ON",
+    "url": "www.example.com",
+    "desc": "儿童绘画、手工及艺术兴趣课程。"
+  },
+
+  {
+    "business_name": "诚信汽车维修",
+    "wechat": "honest_auto",
+    "catName": "汽车服务",
+    "subCatName": "汽车维修",
+    "phone": "519-555-7001",
+    "Email": "auto@example.com",
+    "address": "300 Victoria Street, Kitchener, ON",
+    "url": "www.example.com",
+    "desc": "汽车保养、轮胎、刹车、机油及常规维修服务。"
+  },
+  {
+    "business_name": "Waterloo Auto Service",
+    "wechat": "waterloo_auto",
+    "catName": "汽车服务",
+    "subCatName": "汽车维修",
+    "phone": "519-555-7002",
+    "Email": "",
+    "address": "400 Weber Street, Waterloo, ON",
+    "url": "www.example.com",
+    "desc": "提供汽车检测、保养及维修服务。"
   }
 ]

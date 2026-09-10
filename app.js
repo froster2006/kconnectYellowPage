@@ -8,6 +8,9 @@ let businesses = [];
 
 async function loadJson() {
   try {
+
+    /* Load categories */
+
     const catRes = await fetch('./categories.json');
 
     if (!catRes.ok) {
@@ -18,6 +21,8 @@ async function loadJson() {
 
     categories = await catRes.json();
 
+
+    /* Load businesses */
 
     const busRes = await fetch('./businesses.json');
 
@@ -30,8 +35,56 @@ async function loadJson() {
     businesses = await busRes.json();
 
   } catch (error) {
-    console.error('Error loading JSON:', error);
+
+    console.error(
+      'Error loading JSON:',
+      error
+    );
+
   }
+}
+
+
+/* =========================================================
+   FIND CATEGORY
+   ========================================================= */
+
+/*
+ * Find a parent category by its ID
+ */
+function getCategoryById(categoryId) {
+
+  return categories.find(
+    cat => cat.id === categoryId
+  );
+
+}
+
+
+/*
+ * Find a subcategory by its ID
+ */
+function getSubCategoryById(subCatId) {
+
+  for (const cat of categories) {
+
+    const sub =
+      (cat.sub || []).find(
+        item => item.id === subCatId
+      );
+
+    if (sub) {
+
+      return {
+        parent: cat,
+        sub: sub
+      };
+
+    }
+
+  }
+
+  return null;
 }
 
 
@@ -42,14 +95,19 @@ async function loadJson() {
 function renderLandingCategories() {
 
   const wrap =
-    document.getElementById('landingCatContainer');
+    document.getElementById(
+      'landingCatContainer'
+    );
 
   if (!wrap) {
+
     console.error(
       'landingCatContainer not found'
     );
+
     return;
   }
+
 
   wrap.innerHTML = '';
 
@@ -59,39 +117,54 @@ function renderLandingCategories() {
     const groupDiv =
       document.createElement('div');
 
-    groupDiv.className = 'cat-group';
+    groupDiv.className =
+      'cat-group';
 
 
     groupDiv.innerHTML = `
-      <div class="cat-parent flex justify-between items-center cursor-pointer">
+
+      <div
+        class="cat-parent flex justify-between items-center cursor-pointer"
+      >
+
         <span>
-          ${cat.icon || ''} ${cat.name}
+          ${cat.icon || ''}
+          ${cat.name}
         </span>
 
-        <i class="fa fa-chevron-down cat-arrow"></i>
+        <i
+          class="fa fa-chevron-down cat-arrow"
+        ></i>
+
       </div>
+
 
       <div class="cat-children hidden">
 
         ${(cat.sub || []).map(sub => `
+
           <div
             class="subcat-item"
-            data-cat="${cat.name}"
-            data-subid="${sub.id}"
+            data-subcat-id="${sub.id}"
           >
             ${sub.name}
           </div>
+
         `).join('')}
 
       </div>
+
     `;
 
 
     wrap.appendChild(groupDiv);
+
   });
 
 
-  /* Expand / collapse category */
+  /* =====================================================
+     PARENT CATEGORY EXPAND / COLLAPSE
+     ===================================================== */
 
   document
     .querySelectorAll('.cat-parent')
@@ -105,7 +178,9 @@ function renderLandingCategories() {
             parent.nextElementSibling;
 
           const arrow =
-            parent.querySelector('.cat-arrow');
+            parent.querySelector(
+              '.cat-arrow'
+            );
 
 
           if (!children) {
@@ -119,9 +194,11 @@ function renderLandingCategories() {
 
 
           if (arrow) {
+
             arrow.classList.toggle(
               'rotate-180'
             );
+
           }
 
         }
@@ -130,7 +207,9 @@ function renderLandingCategories() {
     });
 
 
-  /* Subcategory click */
+  /* =====================================================
+     SUBCATEGORY CLICK
+     ===================================================== */
 
   document
     .querySelectorAll('.subcat-item')
@@ -142,10 +221,37 @@ function renderLandingCategories() {
 
           event.stopPropagation();
 
-          const catName =
-            sub.dataset.cat;
 
-          showList(catName);
+          const subCatId =
+            sub.dataset.subcatId;
+
+
+          const result =
+            getSubCategoryById(
+              subCatId
+            );
+
+
+          if (!result) {
+
+            console.error(
+              'Subcategory not found:',
+              subCatId
+            );
+
+            return;
+          }
+
+
+          /*
+           * Pass the actual parent and
+           * subcategory names to showList()
+           */
+
+          showList(
+            result.parent.name,
+            result.sub.name
+          );
 
         }
       );
@@ -167,11 +273,16 @@ function renderDrawerCategories() {
     );
 
   if (!wrap) {
+
     console.error(
       'drawerCatContainer not found'
     );
+
     return;
   }
+
+
+  wrap.innerHTML = '';
 
 
   categories.forEach(cat => {
@@ -179,14 +290,23 @@ function renderDrawerCategories() {
     const div =
       document.createElement('div');
 
+
     div.className =
       'px-4 py-3 border-b text-sm cursor-pointer hover:bg-gray-100 drawer-category';
+
 
     div.innerText =
       cat.name;
 
-    div.dataset.cat =
-      cat.name;
+
+    /*
+     * Store category ID instead of
+     * category name
+     */
+
+    div.dataset.catId =
+      cat.id;
+
 
     wrap.appendChild(div);
 
@@ -201,13 +321,39 @@ function renderDrawerCategories() {
         'click',
         () => {
 
+          const categoryId =
+            item.dataset.catId;
+
+
           const category =
-            item.dataset.cat ||
-            item.innerText;
+            getCategoryById(
+              categoryId
+            );
+
+
+          if (!category) {
+
+            console.error(
+              'Category not found:',
+              categoryId
+            );
+
+            return;
+          }
+
 
           closeDrawerFunc();
 
-          showList(category);
+
+          /*
+           * Parent category:
+           * show all businesses under
+           * this category
+           */
+
+          showList(
+            category.name
+          );
 
         }
       );
@@ -221,7 +367,10 @@ function renderDrawerCategories() {
    BUSINESS LIST
    ========================================================= */
 
-function renderBusinessList(categoryName) {
+function renderBusinessList(
+  categoryName,
+  subCategoryName = null
+) {
 
   const wrap =
     document.getElementById(
@@ -229,9 +378,11 @@ function renderBusinessList(categoryName) {
     );
 
   if (!wrap) {
+
     console.error(
       'businessListWrap not found'
     );
+
     return;
   }
 
@@ -239,20 +390,57 @@ function renderBusinessList(categoryName) {
   let list;
 
 
+  /* =====================================================
+     SUBCATEGORY FILTER
+     ===================================================== */
 
-  list =
-    businesses.filter(
-      b => b.catName === categoryName
-    );
+  if (subCategoryName) {
+
+    list =
+      businesses.filter(
+        b =>
+          b.catName === categoryName &&
+          b.subCatName === subCategoryName
+      );
+
+  }
 
 
+  /* =====================================================
+     PARENT CATEGORY FILTER
+     ===================================================== */
+
+  else if (categoryName) {
+
+    list =
+      businesses.filter(
+        b =>
+          b.catName === categoryName
+      );
+
+  }
 
 
-  /* No results */
+  /* =====================================================
+     ALL BUSINESSES
+     ===================================================== */
+
+  else {
+
+    list =
+      businesses;
+
+  }
+
+
+  /* =====================================================
+     NO RESULTS
+     ===================================================== */
 
   if (list.length === 0) {
 
     wrap.innerHTML = `
+
       <div class="empty-result">
 
         <i
@@ -264,85 +452,223 @@ function renderBusinessList(categoryName) {
         </div>
 
       </div>
+
     `;
 
     return;
   }
 
 
-  /* Business cards */
+  /* =====================================================
+     BUSINESS CARDS
+     ===================================================== */
 
   wrap.innerHTML =
-    list.map(b => `
 
-      <div class="business-card">
+    list.map(
+      b => `
 
-        <div
-          class="flex justify-between items-start gap-3"
-        >
+        <div class="business-card">
 
-          <h3 class="business-name">
-            ${b.name || ''}
-          </h3>
+          <!-- Business name / category -->
 
-          <span class="business-category">
-            ${b.catName || ''}
-          </span>
+          <div
+            class="flex justify-between items-start gap-3"
+          >
+
+            <h3 class="business-name">
+              ${b.business_name || ''}
+            </h3>
+
+            <span class="business-category">
+
+              ${b.subCatName || b.catName || ''}
+
+            </span>
+
+          </div>
+
+
+          <!-- Description -->
+
+          ${
+            b.desc
+              ? `
+                <p class="business-desc">
+                  ${formatDescription(b.desc)}
+                </p>
+              `
+              : ''
+          }
+
+
+          <!-- Business information -->
+
+          <div class="business-info">
+
+
+            <!-- Phone -->
+
+            ${
+              b.phone
+                ? `
+                  <div>
+
+                    <i class="fa fa-phone"></i>
+
+                    <a
+                      href="tel:${b.phone}"
+                      class="business-phone"
+                    >
+                      ${b.phone}
+                    </a>
+
+                  </div>
+                `
+                : ''
+            }
+
+
+            <!-- WeChat -->
+
+            ${
+              b.wechat
+                ? `
+                  <div>
+
+                    <i class="fa fa-weixin"></i>
+
+                    <span>
+                      ${b.wechat}
+                    </span>
+
+                  </div>
+                `
+                : ''
+            }
+
+
+            <!-- Email -->
+
+            ${
+              b.Email
+                ? `
+                  <div>
+
+                    <i class="fa fa-envelope"></i>
+
+                    <a
+                      href="mailto:${b.Email}"
+                    >
+                      ${b.Email}
+                    </a>
+
+                  </div>
+                `
+                : ''
+            }
+
+
+            <!-- Address -->
+
+            ${
+              b.address
+                ? `
+                  <div>
+
+                    <i class="fa fa-map-marker"></i>
+
+                    <span>
+                      ${b.address}
+                    </span>
+
+                  </div>
+                `
+                : ''
+            }
+
+
+            <!-- Website -->
+
+            ${
+              b.url
+                ? `
+                  <div>
+
+                    <i class="fa fa-globe"></i>
+
+                    <a
+                      href="${normalizeUrl(b.url)}"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      ${b.url}
+                    </a>
+
+                  </div>
+                `
+                : ''
+            }
+
+
+          </div>
 
         </div>
 
+      `
+    ).join('');
 
-        ${b.desc
-        ? `
-              <p class="business-desc">
-                ${b.desc}
-              </p>
-            `
-        : ''
-      }
+}
 
 
-        <div class="business-info">
+/* =========================================================
+   DESCRIPTION FORMATTING
+   ========================================================= */
 
-          ${b.phone
-        ? `
-                <div>
+/*
+ * Preserve line breaks in the Excel description
+ */
 
-                  <i class="fa fa-phone"></i>
+function formatDescription(text) {
 
-                  <a
-                    href="tel:${b.phone}"
-                    class="business-phone"
-                  >
-                    ${b.phone}
-                  </a>
+  return String(text)
+    .replace(/\n/g, '<br>');
 
-                </div>
-              `
-        : ''
-      }
+}
 
 
-          ${b.address
-        ? `
-                <div>
+/* =========================================================
+   URL NORMALIZATION
+   ========================================================= */
 
-                  <i class="fa fa-map-marker"></i>
+/*
+ * If Excel contains:
+ *
+ * www.example.com
+ *
+ * convert it to:
+ *
+ * https://www.example.com
+ */
 
-                  <span>
-                    ${b.address}
-                  </span>
+function normalizeUrl(url) {
 
-                </div>
-              `
-        : ''
-      }
+  const value =
+    String(url).trim();
 
-        </div>
 
-      </div>
+  if (
+    value.startsWith('http://') ||
+    value.startsWith('https://')
+  ) {
 
-    `).join('');
+    return value;
+
+  }
+
+
+  return `https://${value}`;
+
 }
 
 
@@ -355,15 +681,18 @@ const landingView =
     'landingView'
   );
 
+
 const listView =
   document.getElementById(
     'listView'
   );
 
+
 const listPageTitle =
   document.getElementById(
     'listPageTitle'
   );
+
 
 const backLandingBtn =
   document.getElementById(
@@ -371,16 +700,26 @@ const backLandingBtn =
   );
 
 
+/* =========================================================
+   SHOW LANDING
+   ========================================================= */
+
 function showLanding() {
 
-  if (!landingView || !listView) {
+  if (
+    !landingView ||
+    !listView
+  ) {
+
     return;
+
   }
 
 
   landingView.classList.remove(
     'view-hidden'
   );
+
 
   listView.classList.add(
     'view-hidden'
@@ -389,44 +728,101 @@ function showLanding() {
 }
 
 
+/* =========================================================
+   SHOW BUSINESS LIST
+   ========================================================= */
+
+/*
+ * categoryName:
+ *   Parent category name
+ *
+ * subCategoryName:
+ *   Optional subcategory name
+ *
+ * Examples:
+ *
+ * showList("医疗保健")
+ *
+ * showList("医疗保健", "针灸推拿")
+ */
+
 function showList(
-  categoryName = '全部'
+  categoryName = null,
+  subCategoryName = null
 ) {
 
-  if (!landingView || !listView) {
+  if (
+    !landingView ||
+    !listView
+  ) {
+
     return;
+
   }
 
+
+  /* Switch views */
 
   landingView.classList.add(
     'view-hidden'
   );
+
 
   listView.classList.remove(
     'view-hidden'
   );
 
 
+  /* =====================================================
+     PAGE TITLE
+     ===================================================== */
+
   if (listPageTitle) {
 
-    listPageTitle.innerText =
-      categoryName === '全部'
-        ? '全部商家'
-        : categoryName;
+    if (subCategoryName) {
+
+      listPageTitle.innerText =
+        subCategoryName;
+
+    }
+
+    else if (categoryName) {
+
+      listPageTitle.innerText =
+        categoryName;
+
+    }
+
+    else {
+
+      listPageTitle.innerText =
+        '全部商家';
+
+    }
 
   }
 
 
+  /* =====================================================
+     RENDER
+     ===================================================== */
+
   renderBusinessList(
-    categoryName
+    categoryName,
+    subCategoryName
   );
 
 
-  /* Always make sure the drawer is closed */
+  /* Always close drawer */
 
   closeDrawerFunc();
+
 }
 
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
 
 if (backLandingBtn) {
 
@@ -447,15 +843,18 @@ const naviBtn =
     'naviBtn'
   );
 
+
 const drawerOverlay =
   document.getElementById(
     'drawerOverlay'
   );
 
+
 const drawerPanel =
   document.getElementById(
     'drawerPanel'
   );
+
 
 const closeDrawer =
   document.getElementById(
@@ -463,16 +862,26 @@ const closeDrawer =
   );
 
 
+/* =========================================================
+   OPEN DRAWER
+   ========================================================= */
+
 function openDrawer() {
 
-  if (!drawerOverlay || !drawerPanel) {
+  if (
+    !drawerOverlay ||
+    !drawerPanel
+  ) {
+
     return;
+
   }
 
 
   drawerOverlay.classList.remove(
     'hidden'
   );
+
 
   drawerPanel.classList.add(
     'open'
@@ -481,10 +890,19 @@ function openDrawer() {
 }
 
 
+/* =========================================================
+   CLOSE DRAWER
+   ========================================================= */
+
 function closeDrawerFunc() {
 
-  if (!drawerOverlay || !drawerPanel) {
+  if (
+    !drawerOverlay ||
+    !drawerPanel
+  ) {
+
     return;
+
   }
 
 
@@ -492,12 +910,15 @@ function closeDrawerFunc() {
     'hidden'
   );
 
+
   drawerPanel.classList.remove(
     'open'
   );
 
 }
 
+
+/* Navigation button */
 
 if (naviBtn) {
 
@@ -509,6 +930,8 @@ if (naviBtn) {
 }
 
 
+/* Close button */
+
 if (closeDrawer) {
 
   closeDrawer.addEventListener(
@@ -519,6 +942,8 @@ if (closeDrawer) {
 }
 
 
+/* Overlay */
+
 if (drawerOverlay) {
 
   drawerOverlay.addEventListener(
@@ -527,10 +952,6 @@ if (drawerOverlay) {
   );
 
 }
-
-
-
-
 
 
 /* =========================================================

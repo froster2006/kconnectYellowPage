@@ -36,10 +36,10 @@
   },
   {
     "id": "medical",
-    "name": "医疗牙医",
+    "name": "医疗保健",
     "icon": "🩺",
     "sub": [
-      {"id":"med-dental","name":"牙医诊所"},
+      {"id":"med-dental","name":"针灸推拿"},
       {"id":"med-tcm","name":"中医理疗"}
     ]
   },
