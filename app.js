@@ -1,3 +1,4 @@
+
 let categories = [];
 let businesses = [];
 
@@ -42,49 +43,6 @@ async function loadJson() {
     );
 
   }
-}
-
-
-/* =========================================================
-   FIND CATEGORY
-   ========================================================= */
-
-/*
- * Find a parent category by its ID
- */
-function getCategoryById(categoryId) {
-
-  return categories.find(
-    cat => cat.id === categoryId
-  );
-
-}
-
-
-/*
- * Find a subcategory by its ID
- */
-function getSubCategoryById(subCatId) {
-
-  for (const cat of categories) {
-
-    const sub =
-      (cat.sub || []).find(
-        item => item.id === subCatId
-      );
-
-    if (sub) {
-
-      return {
-        parent: cat,
-        sub: sub
-      };
-
-    }
-
-  }
-
-  return null;
 }
 
 
@@ -145,7 +103,8 @@ function renderLandingCategories() {
 
           <div
             class="subcat-item"
-            data-subcat-id="${sub.id}"
+            data-cat="${cat.name}"
+            data-subcat="${sub.name}"
           >
             ${sub.name}
           </div>
@@ -222,21 +181,22 @@ function renderLandingCategories() {
           event.stopPropagation();
 
 
-          const subCatId =
-            sub.dataset.subcatId;
+          const categoryName =
+            sub.dataset.cat;
+
+          const subCategoryName =
+            sub.dataset.subcat;
 
 
-          const result =
-            getSubCategoryById(
-              subCatId
-            );
-
-
-          if (!result) {
+          if (
+            !categoryName ||
+            !subCategoryName
+          ) {
 
             console.error(
-              'Subcategory not found:',
-              subCatId
+              'Category or subcategory name not found:',
+              categoryName,
+              subCategoryName
             );
 
             return;
@@ -244,13 +204,13 @@ function renderLandingCategories() {
 
 
           /*
-           * Pass the actual parent and
-           * subcategory names to showList()
+           * Show only the selected
+           * subcategory.
            */
 
           showList(
-            result.parent.name,
-            result.sub.name
+            categoryName,
+            subCategoryName
           );
 
         }
@@ -300,12 +260,12 @@ function renderDrawerCategories() {
 
 
     /*
-     * Store category ID instead of
-     * category name
+     * No category ID is needed.
+     * Store the category name directly.
      */
 
-    div.dataset.catId =
-      cat.id;
+    div.dataset.cat =
+      cat.name;
 
 
     wrap.appendChild(div);
@@ -321,21 +281,14 @@ function renderDrawerCategories() {
         'click',
         () => {
 
-          const categoryId =
-            item.dataset.catId;
+          const categoryName =
+            item.dataset.cat;
 
 
-          const category =
-            getCategoryById(
-              categoryId
-            );
-
-
-          if (!category) {
+          if (!categoryName) {
 
             console.error(
-              'Category not found:',
-              categoryId
+              'Category name not found'
             );
 
             return;
@@ -348,11 +301,11 @@ function renderDrawerCategories() {
           /*
            * Parent category:
            * show all businesses under
-           * this category
+           * this category.
            */
 
           showList(
-            category.name
+            categoryName
           );
 
         }
@@ -481,9 +434,7 @@ function renderBusinessList(
             </h3>
 
             <span class="business-category">
-
               ${b.subCatName || b.catName || ''}
-
             </span>
 
           </div>
@@ -626,7 +577,7 @@ function renderBusinessList(
    ========================================================= */
 
 /*
- * Preserve line breaks in the Excel description
+ * Preserve line breaks in the Excel description.
  */
 
 function formatDescription(text) {
@@ -967,3 +918,4 @@ if (drawerOverlay) {
   renderDrawerCategories();
 
 })();
+
