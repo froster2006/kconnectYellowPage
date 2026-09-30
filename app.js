@@ -12,7 +12,7 @@ async function loadJson() {
 
     /* Load categories */
 
-    const catRes = await fetch('./categories.json');
+    const catRes = await fetch('./categories.json',{ cache: 'no-cache' });
 
     if (!catRes.ok) {
       throw new Error(
@@ -25,7 +25,7 @@ async function loadJson() {
 
     /* Load businesses */
 
-    const busRes = await fetch('./businesses.json');
+    const busRes = await fetch('./businesses.json',{ cache: 'no-cache' });
 
     if (!busRes.ok) {
       throw new Error(

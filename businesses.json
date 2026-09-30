@@ -1,26 +1,5 @@
 [
-  {
-    "business_name": "测试房产公司",
-    "wechat": "test_realestate",
-    "catName": "地产中介",
-    "subCatName": "房产经纪",
-    "phone": "519-555-1001",
-    "Email": "realestate@example.com",
-    "address": "100 King Street, Waterloo, ON",
-    "url": "www.example.com",
-    "desc": "提供滑铁卢地区房屋买卖、租赁及房产咨询服务。"
-  },
-  {
-    "business_name": "Waterloo Homes 房产经纪",
-    "wechat": "waterloo_homes",
-    "catName": "地产中介",
-    "subCatName": "房产经纪",
-    "phone": "519-555-1002",
-    "Email": "homes@example.com",
-    "address": "200 Weber Street, Kitchener, ON",
-    "url": "https://www.example.com",
-    "desc": "专注 Waterloo、Kitchener 和 Cambridge 地区住宅买卖。"
-  },
+
 
   {
     "business_name": "老北京面馆",
@@ -180,5 +159,38 @@
     "address": "400 Weber Street, Waterloo, ON",
     "url": "www.example.com",
     "desc": "提供汽车检测、保养及维修服务。"
+  },
+    {
+    "business_name": "君安地产滑铁卢分公司 Royal LePage Peaceland Realty- 销冠地产经纪",
+    "wechat": "夏肖冬",
+    "catName": "买房卖房",
+    "subCatName": "房产经纪",
+    "phone": "519-591-6888",
+    "Email": "Donxiarealtor@gmail.com",
+    "address": "Waterloo ",
+    "url": "待定",
+    "desc": "房屋买卖，地产投资，房屋租赁，物业管理. 自2014年从事地产经纪行业以来，以专业的服务，精准的市场把控，一丝不苟的工作态度，精明能干的办事能力，刚柔并济的处世风格，屡创公司销冠，备受客户好评。"
+  },
+    {
+    "business_name": "测试房产公司",
+    "wechat": "test_realestate",
+    "catName": "买房卖房",
+    "subCatName": "房产经纪",
+    "phone": "519-555-1001",
+    "Email": "realestate@example.com",
+    "address": "100 King Street, Waterloo, ON",
+    "url": "www.example.com",
+    "desc": "提供滑铁卢地区房屋买卖、租赁及房产咨询服务。"
+  },
+  {
+    "business_name": "Waterloo Homes 房产经纪",
+    "wechat": "waterloo_homes",
+    "catName": "买房卖房",
+    "subCatName": "房产经纪",
+    "phone": "519-555-1002",
+    "Email": "homes@example.com",
+    "address": "200 Weber Street, Kitchener, ON",
+    "url": "https://www.example.com",
+    "desc": "专注 Waterloo、Kitchener 和 Cambridge 地区住宅买卖。"
   }
 ]
