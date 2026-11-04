@@ -299,6 +299,12 @@ function renderDrawerCategories() {
 
           closeDrawerFunc();
 
+          document
+            .querySelectorAll('.listing-search-input')
+            .forEach(input => {
+              input.value = '';
+            });
+
 
           /*
            * Parent category:
@@ -755,6 +761,9 @@ function showList(
   activeCategoryName = categoryName;
   activeSubCategoryName = subCategoryName;
 
+  const activeSearchTerm =
+    document.querySelector('.listing-search-input')?.value.trim() || '';
+
 
   /* =====================================================
      PAGE TITLE
@@ -762,7 +771,14 @@ function showList(
 
   if (listPageTitle) {
 
-    if (subCategoryName) {
+    if (activeSearchTerm) {
+
+      listPageTitle.innerText =
+        '全部商家';
+
+    }
+
+    else if (subCategoryName) {
 
       listPageTitle.innerText =
         subCategoryName;
@@ -834,6 +850,27 @@ searchInputs.forEach(input => {
       }
 
       else {
+
+        if (listPageTitle) {
+
+          if (searchTerm) {
+            listPageTitle.innerText = '全部商家';
+          }
+
+          else if (activeSubCategoryName) {
+            listPageTitle.innerText = activeSubCategoryName;
+          }
+
+          else if (activeCategoryName) {
+            listPageTitle.innerText = activeCategoryName;
+          }
+
+          else {
+            listPageTitle.innerText = '全部商家';
+          }
+
+        }
+
         renderBusinessList(
           activeCategoryName,
           activeSubCategoryName,
