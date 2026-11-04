@@ -1,6 +1,8 @@
 
 let categories = [];
 let businesses = [];
+let activeCategoryName = null;
+let activeSubCategoryName = null;
 
 
 /* =========================================================
@@ -322,7 +324,8 @@ function renderDrawerCategories() {
 
 function renderBusinessList(
   categoryName,
-  subCategoryName = null
+  subCategoryName = null,
+  searchTerm = ''
 ) {
 
   const wrap =
@@ -347,7 +350,16 @@ function renderBusinessList(
      SUBCATEGORY FILTER
      ===================================================== */
 
-  if (subCategoryName) {
+  const normalizedSearchTerm =
+    String(searchTerm).trim().toLocaleLowerCase();
+
+  if (normalizedSearchTerm) {
+
+    list = businesses;
+
+  }
+
+  else if (subCategoryName) {
 
     list =
       businesses.filter(
@@ -382,6 +394,23 @@ function renderBusinessList(
 
     list =
       businesses;
+
+  }
+
+  if (normalizedSearchTerm) {
+
+    list = list.filter(b => {
+
+      const businessName =
+        String(b.business_name || '').toLocaleLowerCase();
+
+      const description =
+        String(b.desc || '').toLocaleLowerCase();
+
+      return businessName.includes(normalizedSearchTerm) ||
+        description.includes(normalizedSearchTerm);
+
+    });
 
   }
 
@@ -723,6 +752,9 @@ function showList(
     'view-hidden'
   );
 
+  activeCategoryName = categoryName;
+  activeSubCategoryName = subCategoryName;
+
 
   /* =====================================================
      PAGE TITLE
@@ -760,7 +792,8 @@ function showList(
 
   renderBusinessList(
     categoryName,
-    subCategoryName
+    subCategoryName,
+    document.querySelector('.listing-search-input')?.value || ''
   );
 
 
@@ -774,6 +807,44 @@ function showList(
 /* =========================================================
    BACK BUTTON
    ========================================================= */
+
+const searchInputs =
+  document.querySelectorAll(
+    '.listing-search-input'
+  );
+
+searchInputs.forEach(input => {
+
+  input.addEventListener(
+    'input',
+    () => {
+
+      searchInputs.forEach(otherInput => {
+
+        if (otherInput !== input) {
+          otherInput.value = input.value;
+        }
+
+      });
+
+      const searchTerm = input.value.trim();
+
+      if (searchTerm && !landingView.classList.contains('view-hidden')) {
+        showList();
+      }
+
+      else {
+        renderBusinessList(
+          activeCategoryName,
+          activeSubCategoryName,
+          searchTerm
+        );
+      }
+
+    }
+  );
+
+});
 
 if (backLandingBtn) {
 

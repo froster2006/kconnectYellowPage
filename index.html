@@ -35,6 +35,19 @@
     <h1 class="text-xl font-bold text-center">KWCG Connect 黄页</h1>
     <p class="text-xs text-center mt-1 opacity-80">请选择服务分类</p>
   </header>
+  <div class="p-4 bg-white">
+    <label for="landingSearchInput" class="sr-only">Search all listings</label>
+    <div class="relative">
+      <i class="fa fa-search absolute left-4" aria-hidden="true"></i>
+      <input
+        id="landingSearchInput"
+        type="search"
+        class="listing-search-input pl-11 pr-4"
+        placeholder="Search all listings..."
+        autocomplete="off"
+      />
+    </div>
+  </div>
   <div id="landingCatContainer" class="mt-2">
     <!-- 分类由JS从categories.json渲染 -->
   </div>
@@ -54,6 +67,21 @@
   </header>
 
   <!-- 侧边抽屉遮罩 -->
+  <!-- Search listings by business name or description -->
+  <div class="p-4 bg-white">
+    <label for="searchInput" class="sr-only">Search listings</label>
+    <div class="relative">
+      <i class="fa fa-search absolute left-4" aria-hidden="true"></i>
+      <input
+        id="searchInput"
+        type="search"
+        class="listing-search-input pl-11 pr-4"
+        placeholder="Search listings..."
+        autocomplete="off"
+      />
+    </div>
+  </div>
+
   <div id="drawerOverlay" class="drawer-overlay"></div>
   <div id="drawerPanel" class="drawer-panel">
     <div class="bg-primary text-white p-4 flex justify-between items-center">
