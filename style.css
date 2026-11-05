@@ -383,6 +383,13 @@ body {
   line-height: 1.55;
 }
 
+.search-highlight {
+  background: #88e4ab;
+  color: #e70b0b;
+  border-radius: 3px;
+  padding: 0 0.12em;
+}
+
 /* Business information */
 .business-card .business-info {
   margin-top: 0.8rem;

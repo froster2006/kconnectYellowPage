@@ -465,7 +465,7 @@ function renderBusinessList(
           >
 
             <h3 class="business-name">
-              ${b.business_name || ''}
+              ${highlightSearchText(b.business_name, searchTerm)}
             </h3>
 
             <span class="business-category">
@@ -481,7 +481,7 @@ function renderBusinessList(
             b.desc
               ? `
                 <p class="business-desc">
-                  ${formatDescription(b.desc)}
+                  ${highlightSearchText(b.desc, searchTerm)}
                 </p>
               `
               : ''
@@ -619,6 +619,70 @@ function formatDescription(text) {
 
   return String(text)
     .replace(/\n/g, '<br>');
+
+}
+
+
+/* =========================================================
+   SEARCH TERM HIGHLIGHTING
+   ========================================================= */
+
+function escapeHtml(text) {
+
+  return String(text)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+
+}
+
+
+function escapeRegExp(text) {
+
+  return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+}
+
+
+function highlightSearchText(text, searchTerm = '') {
+
+  const escapedText =
+    escapeHtml(text || '').replace(/\n/g, '<br>');
+
+  const escapedSearchTerm =
+    escapeHtml(String(searchTerm).trim());
+
+  if (!escapedSearchTerm) {
+    return escapedText;
+  }
+
+  const searchPattern =
+    new RegExp(escapeRegExp(escapedSearchTerm), 'gi');
+
+  return escapedText.replace(
+    searchPattern,
+    match => `<mark class="search-highlight">${match}</mark>`
+  );
+
+}
+
+
+function getValidSearchTerm(value) {
+
+  const searchTerm =
+    String(value).trim();
+
+  if (/^[A-Za-z]+(?:['’-][A-Za-z]+)*$/.test(searchTerm)) {
+    return searchTerm;
+  }
+
+  if (/^[\u4e00-\u9fff]+$/.test(searchTerm)) {
+    return searchTerm;
+  }
+
+  return '';
 
 }
 
@@ -762,7 +826,9 @@ function showList(
   activeSubCategoryName = subCategoryName;
 
   const activeSearchTerm =
-    document.querySelector('.listing-search-input')?.value.trim() || '';
+    getValidSearchTerm(
+      document.querySelector('.listing-search-input')?.value || ''
+    );
 
 
   /* =====================================================
@@ -809,7 +875,7 @@ function showList(
   renderBusinessList(
     categoryName,
     subCategoryName,
-    document.querySelector('.listing-search-input')?.value || ''
+    activeSearchTerm
   );
 
 
@@ -843,7 +909,8 @@ searchInputs.forEach(input => {
 
       });
 
-      const searchTerm = input.value.trim();
+      const searchTerm =
+        getValidSearchTerm(input.value);
 
       if (searchTerm && !landingView.classList.contains('view-hidden')) {
         showList();
