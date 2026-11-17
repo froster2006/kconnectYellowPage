@@ -347,6 +347,15 @@ body {
     border-color 200ms ease;
 }
 
+.business-card-expandable {
+  cursor: pointer;
+}
+
+.business-card-expandable:focus-visible {
+  outline: 2px solid var(--primary-dark);
+  outline-offset: 2px;
+}
+
 .business-card:hover {
   transform: translateY(-3px);
   border-color: var(--secondary);
@@ -398,6 +407,28 @@ body {
   gap: 0.45rem;
   color: var(--text-secondary);
   font-size: 0.875rem;
+}
+
+.business-card .business-info-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.business-card .business-info-details.hidden {
+  display: none !important;
+}
+
+.business-info-hint {
+  line-height: 1;
+  color: var(--text-muted);
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  text-align: center;
+}
+
+.business-info-hint.hidden {
+  display: none !important;
 }
 
 /* Icons */

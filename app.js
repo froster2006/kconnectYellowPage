@@ -454,9 +454,18 @@ function renderBusinessList(
   wrap.innerHTML =
 
     list.map(
-      b => `
+      b => {
+        const hasExpandableInfo =
+          Boolean(b.Email || b.address || b.url);
+        const hasAnyContactInfo =
+          Boolean(b.wechat || b.phone || b.Email || b.address || b.url);
 
-        <div class="business-card">
+        return `
+
+        <div
+          class="business-card${hasExpandableInfo ? ' business-card-expandable' : ''}"
+          ${hasExpandableInfo ? 'tabindex="0" aria-expanded="false"' : ''}
+        >
 
           <!-- Business name / category -->
 
@@ -488,122 +497,197 @@ function renderBusinessList(
           }
 
 
-          <!-- Business information -->
+          ${
+            hasAnyContactInfo
+              ? `
+                <div class="business-info">
 
-          <div class="business-info">
+                  <!-- WeChat -->
 
+                  ${
+                    b.wechat
+                      ? `
+                        <div>
 
-            <!-- Phone -->
+                          <i class="fa fa-weixin"></i>
 
-            ${
-              b.phone
-                ? `
-                  <div>
+                          <span>
+                            ${b.wechat}
+                          </span>
 
-                    <i class="fa fa-phone"></i>
-
-                    <a
-                      href="tel:${b.phone}"
-                      class="business-phone"
-                    >
-                      ${b.phone}
-                    </a>
-
-                  </div>
-                `
-                : ''
-            }
+                        </div>
+                      `
+                      : ''
+                  }
 
 
-            <!-- WeChat -->
+                  <!-- Phone -->
 
-            ${
-              b.wechat
-                ? `
-                  <div>
+                  ${
+                    b.phone
+                      ? `
+                        <div>
 
-                    <i class="fa fa-weixin"></i>
+                          <i class="fa fa-phone"></i>
 
-                    <span>
-                      ${b.wechat}
-                    </span>
+                          <a
+                            href="tel:${b.phone}"
+                            class="business-phone"
+                          >
+                            ${b.phone}
+                          </a>
 
-                  </div>
-                `
-                : ''
-            }
-
-
-            <!-- Email -->
-
-            ${
-              b.Email
-                ? `
-                  <div>
-
-                    <i class="fa fa-envelope"></i>
-
-                    <a
-                      href="mailto:${b.Email}"
-                    >
-                      ${b.Email}
-                    </a>
-
-                  </div>
-                `
-                : ''
-            }
+                        </div>
+                      `
+                      : ''
+                  }
 
 
-            <!-- Address -->
+                  ${
+                    hasExpandableInfo
+                      ? `
+                        <div class="business-info-details hidden">
 
-            ${
-              b.address
-                ? `
-                  <div>
+                          <!-- Email -->
 
-                    <i class="fa fa-map-marker"></i>
+                          ${
+                            b.Email
+                              ? `
+                                <div>
 
-                    <span>
-                      ${b.address}
-                    </span>
+                                  <i class="fa fa-envelope"></i>
 
-                  </div>
-                `
-                : ''
-            }
+                                  <a
+                                    href="mailto:${b.Email}"
+                                  >
+                                    ${b.Email}
+                                  </a>
 
-
-            <!-- Website -->
-
-            ${
-              b.url
-                ? `
-                  <div>
-
-                    <i class="fa fa-globe"></i>
-
-                    <a
-                      href="${normalizeUrl(b.url)}"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      ${b.url}
-                    </a>
-
-                  </div>
-                `
-                : ''
-            }
+                                </div>
+                              `
+                              : ''
+                          }
 
 
-          </div>
+                          <!-- Address -->
+
+                          ${
+                            b.address
+                              ? `
+                                <div>
+
+                                  <i class="fa fa-map-marker"></i>
+
+                                  <span>
+                                    ${b.address}
+                                  </span>
+
+                                </div>
+                              `
+                              : ''
+                          }
+
+
+                          <!-- Website -->
+
+                          ${
+                            b.url
+                              ? `
+                                <div>
+
+                                  <i class="fa fa-globe"></i>
+
+                                  <a
+                                    href="${normalizeUrl(b.url)}"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                  >
+                                    ${b.url}
+                                  </a>
+
+                                </div>
+                              `
+                              : ''
+                          }
+
+                        </div>
+                      `
+                      : ''
+                  }
+
+                  ${
+                    hasExpandableInfo
+                      ? '<div class="business-info-hint">...</div>'
+                      : ''
+                  }
+
+                </div>
+              `
+              : ''
+          }
 
         </div>
 
-      `
+      `;
+      }
     ).join('');
 
+}
+
+
+const businessListWrap =
+  document.getElementById('businessListWrap');
+
+if (businessListWrap) {
+  businessListWrap.addEventListener('click', event => {
+    if (!(event.target instanceof Element)) {
+      return;
+    }
+
+    const card =
+      event.target.closest('.business-card-expandable');
+
+    if (!card || event.target.closest('a')) {
+      return;
+    }
+
+    toggleBusinessInfo(card);
+  });
+
+  businessListWrap.addEventListener('keydown', event => {
+    if (
+      !(event.target instanceof HTMLElement) ||
+      !event.target.classList.contains('business-card-expandable') ||
+      (event.key !== 'Enter' && event.key !== ' ')
+    ) {
+      return;
+    }
+
+    event.preventDefault();
+    toggleBusinessInfo(event.target);
+  });
+}
+
+function toggleBusinessInfo(card) {
+  const info =
+    card.querySelector('.business-info-details');
+
+  if (!info) {
+    return;
+  }
+
+  const expanded =
+    card.getAttribute('aria-expanded') === 'true';
+
+  card.setAttribute('aria-expanded', String(!expanded));
+  info.classList.toggle('hidden', expanded);
+
+  const hint =
+    card.querySelector('.business-info-hint');
+
+  if (hint) {
+    hint.classList.toggle('hidden', !expanded);
+  }
 }
 
 
