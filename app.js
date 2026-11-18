@@ -455,8 +455,17 @@ function renderBusinessList(
 
     list.map(
       b => {
+        const description =
+          String(b.desc || '');
+        const descriptionExcerpt =
+          getDescriptionExcerpt(description, searchTerm);
+        const hasLongDescription =
+          Array.from(description).length > 100;
+        const canExpandDescription =
+          hasLongDescription && !normalizedSearchTerm;
         const hasExpandableInfo =
-          Boolean(b.Email || b.address || b.url);
+          Boolean(b.Email || b.address || b.url) ||
+          canExpandDescription;
         const hasAnyContactInfo =
           Boolean(b.wechat || b.phone || b.Email || b.address || b.url);
 
@@ -487,10 +496,21 @@ function renderBusinessList(
           <!-- Description -->
 
           ${
-            b.desc
+            description
               ? `
                 <p class="business-desc">
-                  ${highlightSearchText(b.desc, searchTerm)}
+                  <span class="business-desc-preview">
+                    ${descriptionExcerpt.startsWithEllipsis ? '...' : ''}${highlightSearchText(descriptionExcerpt.text, searchTerm)}${descriptionExcerpt.endsWithEllipsis ? '...' : ''}
+                  </span>
+                  ${
+                    canExpandDescription
+                      ? `
+                        <span class="business-desc-full hidden">
+                          ${highlightSearchText(description, searchTerm)}
+                        </span>
+                      `
+                      : ''
+                  }
                 </p>
               `
               : ''
@@ -672,7 +692,13 @@ function toggleBusinessInfo(card) {
   const info =
     card.querySelector('.business-info-details');
 
-  if (!info) {
+  const descriptionPreview =
+    card.querySelector('.business-desc-preview');
+
+  const descriptionFull =
+    card.querySelector('.business-desc-full');
+
+  if (!info && !descriptionFull) {
     return;
   }
 
@@ -680,7 +706,15 @@ function toggleBusinessInfo(card) {
     card.getAttribute('aria-expanded') === 'true';
 
   card.setAttribute('aria-expanded', String(!expanded));
-  info.classList.toggle('hidden', expanded);
+
+  if (info) {
+    info.classList.toggle('hidden', expanded);
+  }
+
+  if (descriptionPreview && descriptionFull) {
+    descriptionPreview.classList.toggle('hidden', !expanded);
+    descriptionFull.classList.toggle('hidden', expanded);
+  }
 
   const hint =
     card.querySelector('.business-info-hint');
@@ -750,6 +784,57 @@ function highlightSearchText(text, searchTerm = '') {
     match => `<mark class="search-highlight">${match}</mark>`
   );
 
+}
+
+function getDescriptionExcerpt(text, searchTerm = '') {
+  const characters =
+    Array.from(String(text));
+
+  const maxLength = 100;
+
+  if (characters.length <= maxLength) {
+    return {
+      text: characters.join(''),
+      startsWithEllipsis: false,
+      endsWithEllipsis: false
+    };
+  }
+
+  let startIndex = 0;
+  const searchCharacters =
+    Array.from(String(searchTerm).trim().toLocaleLowerCase());
+
+  if (searchCharacters.length > 0) {
+    const loweredCharacters =
+      characters.map(character => character.toLocaleLowerCase());
+
+    for (let index = 0; index <= characters.length - searchCharacters.length; index += 1) {
+      const matchesSearchTerm =
+        searchCharacters.every(
+          (character, offset) =>
+            loweredCharacters[index + offset] === character
+        );
+
+      if (matchesSearchTerm) {
+        startIndex = Math.max(
+          0,
+          index - Math.floor((maxLength - searchCharacters.length) / 2)
+        );
+        break;
+      }
+    }
+
+    startIndex = Math.min(startIndex, characters.length - maxLength);
+  }
+
+  const endIndex =
+    startIndex + maxLength;
+
+  return {
+    text: characters.slice(startIndex, endIndex).join(''),
+    startsWithEllipsis: startIndex > 0,
+    endsWithEllipsis: endIndex < characters.length
+  };
 }
 
 

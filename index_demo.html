@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KWCG Connect 黄页 Demo</title>
+
+   <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"
+    rel="stylesheet"
+  >
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: '#0f766e',
+          secondary: '#f8fafc',
+        }
+      }
+    }
+  }
+</script>
+
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body class="bg-secondary text-gray-800 max-w-md mx-auto pb-20">
+
+<!-- ========== View 1：Landing 着陆页（动态渲染） ========== -->
+<div id="landingView">
+  <header class="bg-primary text-white px-4 py-4 shadow">
+    <h1 class="text-xl font-bold text-center">KWCG Connect 黄页 Demo</h1>
+    <p class="text-xs text-center mt-1 opacity-80">请选择服务分类</p>
+  </header>
+  <div class="p-4 bg-white">
+    <label for="landingSearchInput" class="sr-only">Search all listings</label>
+    <div class="relative">
+      <i class="fa fa-search absolute left-4" aria-hidden="true"></i>
+      <input
+        id="landingSearchInput"
+        type="search"
+        class="listing-search-input pl-11 pr-4"
+        placeholder="Search all listings..."
+        autocomplete="off"
+      />
+    </div>
+  </div>
+  <div id="landingCatContainer" class="mt-2">
+    <!-- 分类由JS从categories.json渲染 -->
+  </div>
+
+</div>
+
+<!-- ========== View2：商家列表页 ========== -->
+<div id="listView" class="view-hidden">
+  <header class="sticky top-0 z-10 bg-primary text-white px-4 py-3 shadow flex items-center gap-3">
+    <button id="naviBtn" class="text-white text-xl">
+      <i class="fa fa-bars"></i>
+    </button>
+    <button id="backLandingBtn" class="text-white text-xl">
+      <i class="fa fa-arrow-left"></i>
+    </button>
+    <h1 class="text-lg font-bold" id="listPageTitle">商家列表</h1>
+  </header>
+
+  <!-- 侧边抽屉遮罩 -->
+  <!-- Search listings by business name or description -->
+  <div class="p-4 bg-white">
+    <label for="searchInput" class="sr-only">Search listings</label>
+    <div class="relative">
+      <i class="fa fa-search absolute left-4" aria-hidden="true"></i>
+      <input
+        id="searchInput"
+        type="search"
+        class="listing-search-input pl-11 pr-4"
+        placeholder="Search listings..."
+        autocomplete="off"
+      />
+    </div>
+  </div>
+
+  <div id="drawerOverlay" class="drawer-overlay"></div>
+  <div id="drawerPanel" class="drawer-panel">
+    <div class="bg-primary text-white p-4 flex justify-between items-center">
+      <span class="font-bold">全部分类</span>
+      <button id="closeDrawer" class="text-xl"><i class="fa fa-times"></i></button>
+    </div>
+    <nav id="drawerCatContainer" class="py-2">
+      <!-- 侧边分类由JS渲染 -->
+    </nav>
+  </div>
+
+
+
+
+
+  <!-- 商家列表容器 -->
+  <main class="px-4 mt-2 space-y-3" id="businessListWrap">
+    <!-- 商家卡片JS渲染 -->
+  </main>
+
+
+
+</div>
+<script src="./app_demo.js"></script>
+
+</body>
+</html>
