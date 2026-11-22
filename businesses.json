@@ -1,196 +1,178 @@
 [
-
-
   {
-    "business_name": "老北京面馆",
-    "wechat": "beijing_noodles",
-    "catName": "餐馆美食",
-    "subCatName": "中餐餐馆",
-    "phone": "519-555-2001",
-    "Email": "noodles@example.com",
-    "address": "123 King Street N, Waterloo, ON",
-    "url": "www.example.com",
-    "desc": "手工面条、北京炸酱面、牛肉面等传统中式美食。"
+    "business_name": "Lucy 钢琴工作室",
+    "wechat": "Lucy钢琴",
+    "catName": "教培兴趣",
+    "subCatName": "艺术教育",
+    "phone": "519-8850506",
+    "Email": "lucymusic@gmail.com",
+    "address": "Claridge Place, Waterloo",
+    "url": "待定",
+    "desc": "出身于音乐家庭，自幼接受器乐与声乐训练，拥有国内及北美三十年钢琴教学经验。加拿大皇家音乐学院RCM钢琴及乐理注册教师。曾任国内音乐学院钢琴教师，教授本科生。原滑铁卢民乐团的核心组建成员，中文学校声乐教师。\n钢琴授课面向儿童至成人、初级至演奏级。专业教学，因材施教。 兼顾扎实的基本功、音乐表现力与兴趣培养。多年来众多学生完成RCM考级，成果优异，并在音乐节各类赛事中屡获奖项。用专业引领成长，用热爱点亮音乐梦想。\n"
   },
   {
-    "business_name": "江南小厨",
-    "wechat": "jiangnan_kitchen",
-    "catName": "餐馆美食",
-    "subCatName": "中餐餐馆",
-    "phone": "519-555-2002",
-    "Email": "",
-    "address": "456 University Avenue, Waterloo, ON",
-    "url": "",
-    "desc": "家常江浙菜，提供堂食和外卖服务。"
-  },
-  {
-    "business_name": "妈妈私房菜",
-    "wechat": "mama_kitchen",
-    "catName": "餐馆美食",
-    "subCatName": "家庭厨房",
-    "phone": "519-555-2003",
-    "Email": "mama@example.com",
-    "address": "Waterloo, ON",
-    "url": "",
-    "desc": "家庭式中餐，提前预订，每周提供不同特色菜。"
-  },
-
-  {
-    "business_name": "安心装修",
-    "wechat": "safe_renovation",
-    "catName": "装修维修",
-    "subCatName": "家庭装修",
-    "phone": "519-555-3001",
-    "Email": "renovation@example.com",
-    "address": "50 Bridgeport Road, Waterloo, ON",
-    "url": "www.example.com",
-    "desc": "厨房、卫生间、地下室及全屋装修服务。"
-  },
-  {
-    "business_name": "水电专家",
-    "wechat": "plumbing_electric",
-    "catName": "装修维修",
-    "subCatName": "水电维修",
-    "phone": "519-555-3002",
-    "Email": "service@example.com",
-    "address": "Kitchener, ON",
-    "url": "www.example.com",
-    "desc": "提供家庭水管、电路、灯具及常见电气问题维修。"
-  },
-
-  {
-    "business_name": "快捷搬家",
-    "wechat": "quick_move",
-    "catName": "搬家物流",
-    "subCatName": "本地搬家",
-    "phone": "519-555-4001",
-    "Email": "move@example.com",
-    "address": "Kitchener, ON",
-    "url": "www.example.com",
-    "desc": "提供 Kitchener、Waterloo、Cambridge 本地搬家服务。"
-  },
-  {
-    "business_name": "安心搬家物流",
-    "wechat": "easy_move",
-    "catName": "搬家物流",
-    "subCatName": "本地搬家",
-    "phone": "519-555-4002",
-    "Email": "",
-    "address": "Cambridge, ON",
-    "url": "",
-    "desc": "家庭搬家、公寓搬家及小型物品运输。"
-  },
-
-  {
-    "business_name": "和康针灸",
-    "wechat": "healing_acu",
-    "catName": "医疗保健",
-    "subCatName": "针灸推拿",
-    "phone": "519-555-5001",
-    "Email": "acu@example.com",
-    "address": "88 King Street, Waterloo, ON",
-    "url": "www.example.com",
-    "desc": "提供针灸、推拿及相关传统理疗服务。"
-  },
-  {
-    "business_name": "中医健康馆",
-    "wechat": "tcm_health",
-    "catName": "医疗保健",
-    "subCatName": "中医理疗",
-    "phone": "519-555-5002",
-    "Email": "tcm@example.com",
-    "address": "99 Erb Street, Waterloo, ON",
-    "url": "www.example.com",
-    "desc": "提供中医咨询及传统理疗服务。"
-  },
-
-  {
-    "business_name": "ABC课外辅导",
-    "wechat": "abc_tutor",
-    "catName": "教育培训",
-    "subCatName": "课外补习",
-    "phone": "519-555-6001",
-    "Email": "tutor@example.com",
-    "address": "Waterloo, ON",
-    "url": "www.example.com",
-    "desc": "提供数学、英语、科学等课程的课外辅导。"
-  },
-  {
-    "business_name": "未来教育中心",
-    "wechat": "future_edu",
-    "catName": "教育培训",
-    "subCatName": "课外补习",
-    "phone": "519-555-6002",
-    "Email": "",
-    "address": "Kitchener, ON",
-    "url": "",
-    "desc": "中小学生课外辅导及学习规划。"
-  },
-  {
-    "business_name": "小艺术家工作室",
-    "wechat": "little_artist",
-    "catName": "教育培训",
-    "subCatName": "艺术兴趣",
-    "phone": "519-555-6003",
-    "Email": "art@example.com",
-    "address": "120 King Street N, Waterloo, ON",
-    "url": "www.example.com",
-    "desc": "儿童绘画、手工及艺术兴趣课程。"
-  },
-
-  {
-    "business_name": "诚信汽车维修",
-    "wechat": "honest_auto",
-    "catName": "汽车服务",
-    "subCatName": "汽车维修",
-    "phone": "519-555-7001",
-    "Email": "auto@example.com",
-    "address": "300 Victoria Street, Kitchener, ON",
-    "url": "www.example.com",
-    "desc": "汽车保养、轮胎、刹车、机油及常规维修服务。"
-  },
-  {
-    "business_name": "Waterloo Auto Service",
-    "wechat": "waterloo_auto",
-    "catName": "汽车服务",
-    "subCatName": "汽车维修",
-    "phone": "519-555-7002",
-    "Email": "",
-    "address": "400 Weber Street, Waterloo, ON",
-    "url": "www.example.com",
-    "desc": "提供汽车检测、保养及维修服务。"
-  },
-    {
-    "business_name": "君安地产滑铁卢分公司 Royal LePage Peaceland Realty- 销冠地产经纪",
-    "wechat": "夏肖冬",
+    "business_name": "夏肖冬 (君安地产 - Royal LePage Peaceland Realty)",
+    "wechat": "夏肖冬 Don Xia",
     "catName": "买房卖房",
-    "subCatName": "房产经纪",
+    "subCatName": "地产经纪",
     "phone": "519-591-6888",
-    "Email": "Donxiarealtor@gmail.com",
-    "address": "Waterloo ",
+    "Email": "donxiarealtor@gmail.com",
+    "address": "Waterloo, Ontario",
     "url": "待定",
     "desc": "房屋买卖，地产投资，房屋租赁，物业管理. 自2014年从事地产经纪行业以来，以专业的服务，精准的市场把控，一丝不苟的工作态度，精明能干的办事能力，刚柔并济的处世风格，屡创公司销冠，备受客户好评。"
   },
-    {
-    "business_name": "测试房产公司",
-    "wechat": "test_realestate",
-    "catName": "买房卖房",
-    "subCatName": "房产经纪",
-    "phone": "519-555-1001",
-    "Email": "realestate@example.com",
-    "address": "100 King Street, Waterloo, ON",
-    "url": "www.example.com",
-    "desc": "提供滑铁卢地区房屋买卖、租赁及房产咨询服务。提供滑铁卢地区房屋买卖、租赁及房产咨询服务。提供滑铁卢地区房屋买卖、租赁及房产咨询服务。提供滑铁卢地区房屋买卖、租赁及房产咨询服务。提供滑铁卢地区房屋买卖、租赁及房产咨询服务。提供滑铁卢地区房屋买卖、租赁及房产咨询服务。提供滑铁卢地区房屋买卖、租赁及房产咨询服务。提供滑铁卢地区房屋买卖、租赁及房产咨询服务。提供滑铁卢地区房屋买卖、租赁及房产咨询服务。提供滑铁卢地区房屋买卖、租赁及房产咨询服务。"
+  {
+    "business_name": "Tongji 中医针灸按摩正骨诊所",
+    "wechat": "王春明",
+    "catName": "医疗保健",
+    "subCatName": "中医诊所",
+    "phone": "519-568-3743",
+    "Email": "wcm9512@yahoo.ca",
+    "address": "750 Victoria Street South Kitchener N2M3B4",
+    "url": "无",
+    "desc": "为客人提供传统的中医中药治疗，以及针灸按摩正骨治疗。"
   },
   {
-    "business_name": "Waterloo Homes 房产经纪",
-    "wechat": "waterloo_homes",
-    "catName": "买房卖房",
-    "subCatName": "房产经纪",
-    "phone": "519-555-1002",
-    "Email": "homes@example.com",
-    "address": "200 Weber Street, Kitchener, ON",
-    "url": "https://www.example.com",
-    "desc": "专注 Waterloo、Kitchener 和 Cambridge 地区住宅买卖。"
+    "business_name": "硬功夫工程公司",
+    "wechat": "谭守金",
+    "catName": "装修维修",
+    "subCatName": "园艺工程",
+    "phone": "226-698-3858",
+    "Email": "shoujintan@gmail.com",
+    "address": "149 Elgin crescent Waterloo",
+    "url": "https://muse.ai/s/hardkungfu-construction-showcase-lu6ae5xcexwxoxx/Ww2gGa2XgM8aZ-4JcZpZORkeZ4cUORxvcgmvLeA0YO4",
+    "desc": "硬功夫园艺工程公司致力于房屋车道，包括沥青车道，混凝土车道、fence、deck新建与维修，园艺设计和施工！外墙防水、和室内装修业务，服务于滑铁卢地区"
+  },
+  {
+    "business_name": "正青春俱乐部",
+    "wechat": "爱心Cindy",
+    "catName": "休闲玩乐",
+    "subCatName": "社团活动",
+    "phone": null,
+    "Email": "zhengqingchun2023@gmail.com",
+    "address": "29 Westmount S. Waterloo",
+    "url": "待定",
+    "desc": "WCCA正青春俱乐部有腰鼓、走秀、拉丁舞、健身舞、交谊舞活动，还有各种有趣的室内和户外的团建活动，欢迎各位帅哥美女参加！"
+  },
+  {
+    "business_name": "H&Zhome",
+    "wechat": "Steven",
+    "catName": "装修维修",
+    "subCatName": "维修安装",
+    "phone": "204-720-9699",
+    "Email": "stevenhoumb@gmail.com",
+    "address": "Waterloo",
+    "url": "待定",
+    "desc": "我们在KW地区从事室内装修维修，以及维修水管疏通，还提供家政服务，专业清洗地毯需要的联系电话微信同号2047209699"
+  },
+  {
+    "business_name": "舒适专业按摩针灸诊所",
+    "wechat": "苏小婷",
+    "catName": "医疗保健",
+    "subCatName": "按摩针灸",
+    "phone": "519-573-8368",
+    "Email": "sumassagewaterloo@gmail.com",
+    "address": "Unit F33 619 Wild Ginger Ave Watetloo",
+    "url": "待定",
+    "desc": "中医按摩,针灸"
+  },
+  {
+    "business_name": "金钥匙留学之家",
+    "wechat": "郭绍武",
+    "catName": "教培兴趣",
+    "subCatName": "留学寄宿",
+    "phone": "519-729-2888",
+    "Email": "shaowuguo@gmail.com",
+    "address": "86 Blythwood.Road.Waterloo",
+    "url": "待定",
+    "desc": "金钥匙留学之家——青春百度站 修行悟道场"
+  },
+  {
+    "business_name": "土豆集运",
+    "wechat": "Meikuo",
+    "catName": "快递运输",
+    "subCatName": "海运空运",
+    "phone": "226-988-4712",
+    "Email": "meikuo779@gmail.com",
+    "address": "119 Greenbrier Dr Waterloo",
+    "url": "kmknitsdesigns.etsy.com",
+    "desc": "大家好！我们是滑铁卢本地服务商：【土豆集运】专注中国到加拿大海运及空运物流，大小包裹、家具杂货皆可集运，双清包税、安全省心；同时拥有原创手作工作室（KM KNITS & KNOTS），精选优质毛线纯手工钩织玩偶、帽子与生活好物，欢迎咨询集运或逛逛我们的 Etsy 小店！"
+  },
+  {
+    "business_name": "Canthru Immigration (加路移民）",
+    "wechat": "Dora Yan",
+    "catName": "法律金融保险",
+    "subCatName": "移民公证",
+    "phone": "519-721-3005",
+    "Email": "info@canthruimmi.ca",
+    "address": "滑铁卢",
+    "url": "www.canthruimmi.ca",
+    "desc": "前中国律师+加拿大移民顾问双重法律背景，多年律师与移民实战经验，以严谨法理与优秀文书提供高效服务。专攻各类旅游、学签、工签、亲属团聚、快速通道、人道主义与同情理由移民等各类签证申请，擅长各类签证拒签后申请翻案，并提供加拿大本地公证及各类文件认证。"
+  },
+  {
+    "business_name": "滑铁卢家帮手维修 TY Home Services Inc.",
+    "wechat": "Ellen Xu(EllenXP)",
+    "catName": "装修维修",
+    "subCatName": "维修安装",
+    "phone": "226-808-6568",
+    "Email": "ping@tyhomeservices.ca",
+    "address": "Eastbridge, Waterloo",
+    "url": "www.tyhomeservices.ca",
+    "desc": "Base在滑铁卢的家庭维修团队，面向KWCG地区居民提供家庭Handyman修理和安装服务，包括车库门维修、水电气修理和剪草/铲雪/搬家等家居服务。"
+  },
+  {
+    "business_name": "Carrie Qi CIBC Wood Gundy",
+    "wechat": "CarrieQ",
+    "catName": "法律金融保险",
+    "subCatName": "投资理财",
+    "phone": "519-570-4098",
+    "Email": "carrie.qi@cibc.com",
+    "address": "150 Caroline St S, Waterloo, ON N2L 0A5",
+    "url": "https://woodgundyadvisors.cibc.com/web/carrie-qi/",
+    "desc": "投资理财，包括GIC，基金，ETF，股票债券，结构性票据。财富规划，包括退休规划，税务规划，遗产规划。"
+  },
+  {
+    "business_name": "Frank",
+    "wechat": "The Sun",
+    "catName": "装修维修",
+    "subCatName": "维修安装",
+    "phone": "519-590-6308",
+    "Email": "hy16sun@gmail.com",
+    "address": "321 Brandenburg place Waterloo",
+    "url": "无",
+    "desc": "Rental room electric inspection"
+  },
+  {
+    "business_name": "滑铁卢宠物寄养",
+    "wechat": "陈琦@KW 宠物寄养",
+    "catName": "宠物相关",
+    "subCatName": "宠物寄养",
+    "phone": "548-990-9432",
+    "Email": "77333197@qq.com",
+    "address": "99 Milford Ave，Waterloo",
+    "url": "无",
+    "desc": "提供宠物寄养，让您的爱宠如在家一般自在安心"
+  },
+  {
+    "business_name": "新生命电器公司",
+    "wechat": "小华",
+    "catName": "装修维修",
+    "subCatName": "家政服务",
+    "phone": "226-666-6880",
+    "Email": "justus0206@Gmail.com",
+    "address": "Unit 21, 6 Colby court, Waterloo",
+    "url": "无",
+    "desc": "主营家电买卖以及维修服务，承接铲雪剪草，各种保洁服务，以及babysitting, home care 业务"
+  },
+  {
+    "business_name": "KW快递速运",
+    "wechat": "Amy",
+    "catName": "快递运输",
+    "subCatName": "海运空运",
+    "phone": "519-580-9288",
+    "Email": "ding-yuer@163.com",
+    "address": "279 weber N （unit101A）waterloo",
+    "url": "无",
+    "desc": "加拿大锦程速运到中国大陆快递业务滑铁卢地区代理，空运小包，回国行李特惠, 提供从中国大陆到加拿大的空运和海运集运服务，提供大陆顺丰上门取件服务."
   }
 ]
