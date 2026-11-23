@@ -16,6 +16,21 @@ def convert_value(value):
     return value
 
 
+def format_phone(value):
+    if value is None:
+        return value
+
+    if isinstance(value, float) and value.is_integer():
+        phone = str(int(value))
+    else:
+        phone = str(value).strip()
+
+    if len(phone) == 10 and phone.isascii() and phone.isdigit():
+        return f"{phone[:3]}-{phone[3:6]}-{phone[6:]}"
+
+    return value
+
+
 def xlsx_to_json(
     input_file,
     output_business_file,
@@ -272,6 +287,9 @@ def xlsx_to_json(
 
             # Convert dates/datetimes to JSON-safe strings
             value = convert_value(value)
+
+            if json_name == "phone":
+                value = format_phone(value)
 
             business[json_name] = value
 

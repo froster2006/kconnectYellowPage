@@ -462,7 +462,7 @@ function renderBusinessList(
         const hasLongDescription =
           Array.from(description).length > 100;
         const canExpandDescription =
-          hasLongDescription && !normalizedSearchTerm;
+          hasLongDescription;
         const hasExpandableInfo =
           Boolean(b.Email || b.address || b.url) ||
           canExpandDescription;
