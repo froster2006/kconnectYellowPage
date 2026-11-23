@@ -179,6 +179,7 @@ def xlsx_to_json(
     # }
     #
     categories = {}
+    category_business_counts = {}
 
     # ---------------------------------------------------------
     # Process each Excel row
@@ -222,6 +223,9 @@ def xlsx_to_json(
                     "icon": DEFAULT_CATEGORY_ICON,
                     "sub": []
                 }
+                category_business_counts[cat_name] = 0
+
+            category_business_counts[cat_name] += 1
 
             # Add subcategory if it exists
             if subcat_name:
@@ -301,7 +305,11 @@ def xlsx_to_json(
     ) as f:
 
         json.dump(
-            list(categories.values()),
+            sorted(
+                categories.values(),
+                key=lambda category: category_business_counts[category["name"]],
+                reverse=True
+            ),
             f,
             ensure_ascii=False,
             indent=2
