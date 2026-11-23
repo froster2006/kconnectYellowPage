@@ -15,9 +15,9 @@
     "wechat": "夏肖冬 Don Xia",
     "catName": "买房卖房",
     "subCatName": "地产经纪",
-    "phone": "519-591-6888",
+    "phone": "519-591-6888 ",
     "Email": "donxiarealtor@gmail.com",
-    "address": "Waterloo, Ontario",
+    "address": "Waterloo, Ontario ",
     "url": "待定",
     "desc": "房屋买卖，地产投资，房屋租赁，物业管理. 自2014年从事地产经纪行业以来，以专业的服务，精准的市场把控，一丝不苟的工作态度，精明能干的办事能力，刚柔并济的处世风格，屡创公司销冠，备受客户好评。"
   },
@@ -35,11 +35,11 @@
   {
     "business_name": "硬功夫工程公司",
     "wechat": "谭守金",
-    "catName": "装修维修",
+    "catName": "装修家居",
     "subCatName": "园艺工程",
     "phone": "226-698-3858",
     "Email": "shoujintan@gmail.com",
-    "address": "149 Elgin crescent Waterloo",
+    "address": "149 Elgin crescent Waterloo ",
     "url": "https://muse.ai/s/hardkungfu-construction-showcase-lu6ae5xcexwxoxx/Ww2gGa2XgM8aZ-4JcZpZORkeZ4cUORxvcgmvLeA0YO4",
     "desc": "硬功夫园艺工程公司致力于房屋车道，包括沥青车道，混凝土车道、fence、deck新建与维修，园艺设计和施工！外墙防水、和室内装修业务，服务于滑铁卢地区"
   },
@@ -50,20 +50,9 @@
     "subCatName": "社团活动",
     "phone": null,
     "Email": "zhengqingchun2023@gmail.com",
-    "address": "29 Westmount S. Waterloo",
+    "address": "29 Westmount S. Waterloo ",
     "url": "待定",
     "desc": "WCCA正青春俱乐部有腰鼓、走秀、拉丁舞、健身舞、交谊舞活动，还有各种有趣的室内和户外的团建活动，欢迎各位帅哥美女参加！"
-  },
-  {
-    "business_name": "H&Zhome",
-    "wechat": "Steven",
-    "catName": "装修维修",
-    "subCatName": "维修安装",
-    "phone": "204-720-9699",
-    "Email": "stevenhoumb@gmail.com",
-    "address": "Waterloo",
-    "url": "待定",
-    "desc": "我们在KW地区从事室内装修维修，以及维修水管疏通，还提供家政服务，专业清洗地毯需要的联系电话微信同号2047209699"
   },
   {
     "business_name": "舒适专业按摩针灸诊所",
@@ -79,7 +68,7 @@
   {
     "business_name": "金钥匙留学之家",
     "wechat": "郭绍武",
-    "catName": "教培兴趣",
+    "catName": "留学移民",
     "subCatName": "留学寄宿",
     "phone": "519-729-2888",
     "Email": "shaowuguo@gmail.com",
@@ -101,7 +90,7 @@
   {
     "business_name": "Canthru Immigration (加路移民）",
     "wechat": "Dora Yan",
-    "catName": "法律金融保险",
+    "catName": "留学移民",
     "subCatName": "移民公证",
     "phone": "519-721-3005",
     "Email": "info@canthruimmi.ca",
@@ -112,7 +101,7 @@
   {
     "business_name": "滑铁卢家帮手维修 TY Home Services Inc.",
     "wechat": "Ellen Xu(EllenXP)",
-    "catName": "装修维修",
+    "catName": "装修家居",
     "subCatName": "维修安装",
     "phone": "226-808-6568",
     "Email": "ping@tyhomeservices.ca",
@@ -123,7 +112,7 @@
   {
     "business_name": "Carrie Qi CIBC Wood Gundy",
     "wechat": "CarrieQ",
-    "catName": "法律金融保险",
+    "catName": "法律金融",
     "subCatName": "投资理财",
     "phone": "519-570-4098",
     "Email": "carrie.qi@cibc.com",
@@ -132,15 +121,15 @@
     "desc": "投资理财，包括GIC，基金，ETF，股票债券，结构性票据。财富规划，包括退休规划，税务规划，遗产规划。"
   },
   {
-    "business_name": "Frank",
+    "business_name": "Frank ",
     "wechat": "The Sun",
-    "catName": "装修维修",
+    "catName": "装修家居",
     "subCatName": "维修安装",
     "phone": "519-590-6308",
     "Email": "hy16sun@gmail.com",
-    "address": "321 Brandenburg place Waterloo",
+    "address": "321 Brandenburg place Waterloo ",
     "url": "无",
-    "desc": "Rental room electric inspection"
+    "desc": "Rental room electric inspection "
   },
   {
     "business_name": "滑铁卢宠物寄养",
@@ -156,11 +145,11 @@
   {
     "business_name": "新生命电器公司",
     "wechat": "小华",
-    "catName": "装修维修",
+    "catName": "生活服务",
     "subCatName": "家政服务",
     "phone": "226-666-6880",
     "Email": "justus0206@Gmail.com",
-    "address": "Unit 21, 6 Colby court, Waterloo",
+    "address": "Unit 21, 6 Colby court, Waterloo ",
     "url": "无",
     "desc": "主营家电买卖以及维修服务，承接铲雪剪草，各种保洁服务，以及babysitting, home care 业务"
   },
@@ -173,6 +162,72 @@
     "Email": "ding-yuer@163.com",
     "address": "279 weber N （unit101A）waterloo",
     "url": "无",
-    "desc": "加拿大锦程速运到中国大陆快递业务滑铁卢地区代理，空运小包，回国行李特惠, 提供从中国大陆到加拿大的空运和海运集运服务，提供大陆顺丰上门取件服务."
+    "desc": "加拿大锦程速运到中国大陆快递业务滑铁卢地区代理，空运小包，回国行李特惠, 提供从中国大陆到加拿大的空运和海运集运服务，提供大陆顺丰上门取件服务. "
+  },
+  {
+    "business_name": "滑铁卢耳舍 Erjoy Beauty Waterloo",
+    "wechat": "滑铁卢耳舍Erjoy Beauty Waterloo",
+    "catName": "养生医美",
+    "subCatName": "休闲养生",
+    "phone": "519-897-7396",
+    "Email": "erjoybeautywaterloo@gmail.com",
+    "address": "H102, 62 Larch Street, Waterloo ",
+    "url": "www.erjoybeautywaterloo.com",
+    "desc": "滑铁卢耳舍是滑铁卢地区首家且唯一专业采耳、头疗、焕肤Spa，为本地社区带来高端的服务和独到的体验。\n\n滑铁卢耳舍以精湛的手法提供头发清洁、头皮养护、耳道清洁、舒缓按摩、皮肤护理等服务，帮助您在愉悦的感受中舒展精神、去除疲劳、调养身心，更加自如地应对学习、工作和生活中的压力。\n\n滑铁卢耳舍提供多个服务项目，服务时长为20到70分钟，价格从$25至$108不等，通过团购、加入会员、消费积累等方式可享受多种折扣。\n\n滑铁卢耳舍位于Unit H102, 62 Larch St, Waterloo（原幻彩发艺门店，毗邻阳光医美），全新装修与设施，环境整洁明亮，团队热忱友善，以专业出色的服务提供极致感受，为忙绿辛劳的你缓解一身的疲乏。\n\n滑铁卢耳舍靠近UW和WLU，周边交通便捷、停车方便。如高峰时段需使用WLU校园付费停车场，我们提供停车费返还。\n"
+  },
+  {
+    "business_name": "沐光窗饰 Luma Window Fashions",
+    "wechat": "Jessie Wang | 沐光窗饰",
+    "catName": "装修家居",
+    "subCatName": "室内软装",
+    "phone": "519-835-8782",
+    "Email": "hello@lumawindowfashions.com",
+    "address": "539 Sundew Dr, Waterloo",
+    "url": "www.lumawindowfashions.com",
+    "desc": "沐光窗饰 Luma Window Fashions是滑铁卢地区首家华人专业定制窗饰品牌，专注服务Waterloo、Kitchener、Cambridge、Guelph 及周边社区。\n\n沐光专注于住宅及商业空间的定制窗饰解决方案，产品涵盖定制窗帘、百叶窗、遮阳帘及智能电动窗饰等。通过与专业窗饰制造商及产品供应商合作，沐光将优质窗饰产品与本地专业服务相结合，为客户提供产品咨询、方案设计、专业测量、定制订购及安装协调等服务。\n\n沐光注重窗饰产品的品质、实用功能与室内设计的协调性，根据客户的采光、隐私、空间风格及预算需求，提供适合不同住宅和商业项目的个性化窗饰方案。"
+  },
+  {
+    "business_name": "安序家居收纳整理",
+    "wechat": "彭蜜",
+    "catName": "生活服务",
+    "subCatName": "家政服务",
+    "phone": "519-804-2661",
+    "Email": "michelle@decentandorderly.com",
+    "address": "579 Paradise Cres",
+    "url": "decentandorderly.com",
+    "desc": "上门整理与空间规划：全屋规划、衣橱/书房/厨房等空间整理与优化，以及针对搬家、换小房（Downsizing）或卖房前的断舍离梳理。\n\n日常清洁与整理维护：提供日常家居清洁与整理归位服务，协助维持清爽整洁的生活环境（例如整理时同步全屋卫生，或定期上门协助归位与基础打扫）\n\n搬家打包与归位还原：协助整理打包、搬入新居后的物品归位与空间布置。 \n\n服务区域：专注加拿大 KW 及周边地区；大多伦多地区（GTA）可预约整屋或大项目上门。"
+  },
+  {
+    "business_name": "H&Z ",
+    "wechat": "Famei",
+    "catName": "生活服务",
+    "subCatName": "清洁通渠",
+    "phone": "519-580-5169",
+    "Email": "645853095@qq.com",
+    "address": "Waterloo",
+    "url": null,
+    "desc": "室内装修，疏通下水管道，家政服务等"
+  },
+  {
+    "business_name": "TT Property Group",
+    "wechat": "Tom",
+    "catName": "装修家居",
+    "subCatName": "园艺工程",
+    "phone": "289-894-2937 / 519- 781-6685",
+    "Email": "ttlandscaping0@gmail.com",
+    "address": "135 Dearborn Place, Waterloo, ON N2J 4N5",
+    "url": "ttpropertygroup.ca",
+    "desc": "TT Property Group (T&T Landscaping) 是扎根滑铁卢地区的本地园林绿化公司，发展迅速，本雪季已服务 300 余户家庭与物业，服务 Waterloo、Kitchener、Cambridge 及周边地区。冬季以拖拉机吹雪机组为主力，提供车道吹雪包季服务（11月15日至次年4月15日），雪停后 18 到 24 小时内清理完毕，含车道吹雪、门口人行道清理与市政雪墙清理；春夏秋季提供割草养护、园林设计与施工、灌木修剪、施肥打孔、deck 建造与 interlock 铺装。本地团队，铲雪拖拉机四台，各种工程机械设备若干，全年服务不断档，中英文皆可沟通。电话：(289) 894-2937，网址：ttpropertygroup.ca。"
+  },
+  {
+    "business_name": "EY Wireless",
+    "wechat": "evanyang918",
+    "catName": "生活服务",
+    "subCatName": "手机宽带",
+    "phone": null,
+    "Email": "eywirelessinc@gmail.com",
+    "address": "118 Foamflower Pl Waterloo",
+    "url": null,
+    "desc": "提供各大运营商家庭和商业的宽带服务和手机套餐办理。包括但不限于，Rogers，Bell，Telus，中国电信加拿大（CTExcel），Koodo, Fido, Virgin, Ebox, Telmax, Phonebox 等"
   }
 ]

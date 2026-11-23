@@ -330,7 +330,7 @@ def xlsx_to_json(
 
 output_file_business = "businesses_parsed.json"
 output_file_category = "category_parsed.json"
-input_file = "Contact Information (Responses)(2).xlsx"
+input_file = "Contact Information (Responses).xlsx"
 ignore_columns = ["Timestamp"]
 column_mapping = {
     "商户名称": "business_name",
