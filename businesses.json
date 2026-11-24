@@ -1,16 +1,5 @@
 [
   {
-    "business_name": "Lucy 钢琴工作室",
-    "wechat": "Lucy钢琴",
-    "catName": "教培兴趣",
-    "subCatName": "艺术教育",
-    "phone": "519-8850506",
-    "Email": "lucymusic@gmail.com",
-    "address": "Claridge Place, Waterloo",
-    "url": "待定",
-    "desc": "出身于音乐家庭，自幼接受器乐与声乐训练，拥有国内及北美三十年钢琴教学经验。加拿大皇家音乐学院RCM钢琴及乐理注册教师。曾任国内音乐学院钢琴教师，教授本科生。原滑铁卢民乐团的核心组建成员，中文学校声乐教师。\n钢琴授课面向儿童至成人、初级至演奏级。专业教学，因材施教。 兼顾扎实的基本功、音乐表现力与兴趣培养。多年来众多学生完成RCM考级，成果优异，并在音乐节各类赛事中屡获奖项。用专业引领成长，用热爱点亮音乐梦想。\n"
-  },
-  {
     "business_name": "夏肖冬 (君安地产 - Royal LePage Peaceland Realty)",
     "wechat": "夏肖冬 Don Xia",
     "catName": "买房卖房",
@@ -213,7 +202,7 @@
     "wechat": "Tom",
     "catName": "装修家居",
     "subCatName": "园艺工程",
-    "phone": "289-894-2937 / 519- 781-6685",
+    "phone": "289-894-2937 / 519-781-6685",
     "Email": "ttlandscaping0@gmail.com",
     "address": "135 Dearborn Place, Waterloo, ON N2J 4N5",
     "url": "ttpropertygroup.ca",
@@ -229,5 +218,27 @@
     "address": "118 Foamflower Pl Waterloo",
     "url": null,
     "desc": "提供各大运营商家庭和商业的宽带服务和手机套餐办理。包括但不限于，Rogers，Bell，Telus，中国电信加拿大（CTExcel），Koodo, Fido, Virgin, Ebox, Telmax, Phonebox 等"
+  },
+  {
+    "business_name": "吴越华音乐教育中心",
+    "wechat": "吴越华",
+    "catName": "教培兴趣",
+    "subCatName": "音乐教育",
+    "phone": "226-899-3688",
+    "Email": "wuyuehua@live.jp",
+    "address": "771 Snowberry court Waterloo N2V 0E7",
+    "url": "https://lhlcenter.org/heritage-initiative-2026/",
+    "desc": "吴越华：女高音歌唱家，钢琴教育家，中加文化使者。加拿大皇家音乐学院注册考级教师，加拿大音乐教师联盟会员，中国高等音乐教育学会会员，研究生学历。原浙江音乐学院讲师，曾在中，日，加及中国台湾举办多次独唱音乐会，获日本放送联盟总务大臣奖，音乐书籍日本畅销榜榜首，登央视、日本电视台演出，获国家领导人接见，曾为日本前首相演唱。现主持吴越华音乐教育中心，拥有30多年教学和舞台表演经验。学生斩获加拿大皇家音乐学院钢琴声乐10级ARCT教师演奏级证书多数，学生音乐理论满分100分。学生考入多伦多大学声乐专业，西安大略大学钢琴专业。学生在Kiwanis省级赛，国际音乐大赛等赛事中屡获金奖一等奖无数，多次担任水立方杯，北美超凡之星，中国少儿小金钟奖等赛事评委获优秀评委奖，获中央电视台全国少儿艺术人才选拔优秀组织奖，优秀教师奖，获加拿大国际音乐大赛优秀教师奖，纽约全球音乐大赛颁奖音乐会卡内基音乐厅Carnegie Hall表演嘉宾奖和杰出教师奖。积极投身中加文化交流和社区公益，积极带领学生参加市长新年音乐会，华人春晚，龙文化节，多元文化节等活动。师生音乐会将举办第20次。"
+  },
+  {
+    "business_name": "Lucy 钢琴工作室",
+    "wechat": "Lucy-Piano",
+    "catName": "教培兴趣",
+    "subCatName": "音乐教育",
+    "phone": "519-885-0506",
+    "Email": "lucymusic@gmail.com",
+    "address": "Claridge Place，Waterloo",
+    "url": "www.lucypianostudio.com",
+    "desc": "Lucy 钢琴工作室\n\n出身于音乐家庭，自幼接受器乐与声乐训练，拥有国内及北美三十年钢琴教学经验。加拿大皇家音乐学院（RCM）钢琴及乐理注册教师。曾任国内音乐学院钢琴教师，教授本科生。原滑铁卢民乐团核心组建成员，中文学校声乐教师。\n\n钢琴授课面向儿童至成人、入门至演奏级。专业教学，因材施教。 兼顾扎实的基本功、音乐表现力与兴趣培养。多年来众多学生参加 RCM考级与音乐节各类比赛，成绩优异、屡获奖项。用专业引领成长，用热爱点亮音乐梦想。\n\n微信号 Lucy-Piano\nlucymusic@gmail.com\n519-8850506"
   }
 ]
